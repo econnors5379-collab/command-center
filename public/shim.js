@@ -24,7 +24,7 @@
   }
   const CSS = '#cc-auth{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:24px max(16px,env(safe-area-inset-left,0px));background:radial-gradient(1200px 600px at 50% -10%,rgba(124,131,255,.18),transparent 60%),#07080A;color:#E9ECF2;font-family:Geist,system-ui,-apple-system,sans-serif}' +
     '#cc-auth form{width:min(380px,100%);display:flex;flex-direction:column;gap:12px;background:#0E1013;border:1px solid #1E222A;border-radius:18px;padding:24px}' +
-    '#cc-auth .mk{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#7C83FF,#B36BFF);display:grid;place-items:center;margin-bottom:4px}' +
+    '#cc-auth .mk{width:64px;height:64px;border-radius:16px;margin-bottom:4px;box-shadow:0 8px 30px rgba(255,70,170,.35)}' +
     '#cc-auth h1{margin:0;font-size:1.35rem;letter-spacing:-.02em;background:linear-gradient(90deg,#fff,#B9BDFF);-webkit-background-clip:text;background-clip:text;color:transparent}' +
     '#cc-auth p{margin:0;color:#8A92A3;font-size:.86rem}' +
     '#cc-auth input{font:inherit;font-size:16px;background:#07080A;color:#E9ECF2;border:1px solid #262B35;border-radius:10px;padding:12px}' +
@@ -40,7 +40,7 @@
         const old = document.getElementById('cc-auth'); if (old) old.remove();
         const w = document.createElement('div'); w.id = 'cc-auth';
         const name = (cfg && cfg.appName) || 'Command Center';
-        w.innerHTML = '<form autocomplete="on"><div class="mk"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M4 17l5-5 4 4 7-8"/><path d="M15 8h5v5"/></svg></div>' +
+        w.innerHTML = '<form autocomplete="on"><img class="mk" src="/icons/icon-192.png" alt="">' +
           '<span class="mono">Private · invite only</span><h1></h1><p>Sign in to continue.</p>' +
           '<input type="email" name="email" placeholder="Email" autocomplete="username" required>' +
           '<input type="password" name="password" placeholder="Password" autocomplete="current-password" required>' +
@@ -269,5 +269,5 @@
     standalone: true,
     signOut: async () => { try { Object.keys(localStorage).filter(k => k.startsWith('cc-doc:')).forEach(k => LS.del(k)); } catch (e) {} await client.auth.signOut(); }
   });
-  window.claude = Object.freeze({ use: name => ready.then(ok => (ok && caps[name]) || null) });
+  window.claude = Object.freeze({ use: name => ready.then(ok => (!ok || (name === 'sample' && !(cfg && cfg.aiEnabled))) ? null : (caps[name] || null)) });
 })();

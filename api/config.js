@@ -6,6 +6,7 @@ export default function handler(req, res) {
   res.status(200).json({
     supabaseUrl: env('SUPABASE_URL'),
     supabaseAnonKey: env('SUPABASE_ANON_KEY'),
-    appName: env('APP_NAME', 'Command Center')
+    appName: env('APP_NAME', 'Command Center'),
+    aiEnabled: !!env('ANTHROPIC_API_KEY')
   });
 }

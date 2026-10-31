@@ -1049,7 +1049,7 @@ function guidanceHTML() {
   let body;
   if (UI.busy.guidance) body = '<div class="thinking"><i></i><i></i><i></i> Reading your day…</div>';
   else if (today) body = '<div class="ai-out">' + md(g.text) + '</div>';
-  else if (AI.state === 'off') body = '<p class="small muted">AI isn’t available right now. Check your connection, then reload.</p>';
+  else if (AI.state === 'off') body = '<p class="small muted">The AI game plan is off in this version. Your schedule and top 3 below still run the day.</p>';
   else body = '<p class="small muted">Your mentor reads your schedule, training, tasks, and pipeline and writes a short plan for today.</p>';
   const btn = AI.state === 'on' && !UI.busy.guidance ? '<button class="btn btn-sm ' + (today ? 'btn-ghost' : 'btn-primary') + '" data-act="guidance">' + ICON.spark + (today ? 'Refresh' : 'Get today’s game plan') + '</button>' : '';
   return '<div class="card"><div class="card-head"><div><p class="eyebrow">AI coach</p><h2>Today’s game plan</h2></div>' + btn + '</div>' + body + '</div>';
@@ -1258,7 +1258,7 @@ function viewChat() {
   const threads = S.mentor.threads.slice().sort((a, b) => b.updatedAt - a.updatedAt);
   const side = '<div class="card"><button class="btn btn-primary" style="width:100%" data-act="newThread">+ New conversation</button><div class="threads" style="margin-top:10px">' + (threads.length ? threads.map(t => '<button class="thread-btn" data-act="openThread" data-id="' + t.id + '" aria-current="' + (th && th.id === t.id) + '"><b>' + esc(t.title) + '</b><span class="tiny faint">' + esc(MODES[t.mode] ? MODES[t.mode].label : '') + ' · ' + fmtDate(dkey(new Date(t.updatedAt))) + '</span></button>').join('') : '<p class="small muted" style="padding:8px">No conversations yet.</p>') + '</div></div>';
   let main;
-  if (AI.state === 'off') main = '<div class="card"><h2>AI is off in this view</h2><p class="small muted" style="margin-top:6px">The AI isn’t reachable right now. Check your connection and the setup in the README. Notes, talks, and decisions still work here.</p></div>';
+  if (AI.state === 'off') main = '<div class="card"><h2>Mentor chat is off</h2><p class="small muted" style="margin-top:6px">The in-app mentor is off (no AI key set). You can turn it on later; see README, Step 2. Notes, talks, and decisions still work here.</p></div>';
   else if (!th) main = '<div class="card stack"><div><h2>What do you want to work on?</h2><p class="small muted">Pick a mode, then ask. The mentor sees your plan, pipeline, deals, and training logs. It can propose changes, but nothing changes until you approve.</p></div>' + modesHTML() +
     '<div class="stack" style="gap:6px">' + ['Explain what my dad meant by debt service, using my rental example.','My dad thinks the car rental is too risky. Who has the stronger argument?','Move the box truck to Rejected and add a task to compare two STR markets this week.','Help me defend the Docstar commission idea with actual numbers.'].map(q => '<button class="btn btn-ghost btn-sm" style="justify-content:flex-start;white-space:normal;text-align:left" data-act="starter" data-q="' + esc(q) + '">“' + esc(q) + '”</button>').join('') + '</div>' + composerHTML() + '</div>';
   else {
@@ -1363,7 +1363,7 @@ function settingsModal() {
     '<div class="row"><button class="btn btn-primary" type="submit">Save settings</button><button class="btn" type="button" data-act="rebuildSchedule">Rebuild schedule from gym time</button></div></form>' +
     '<div class="divider"></div><p class="eyebrow" style="margin-bottom:8px">Your data</p><p class="small muted">' + (Store.mode === 'cloud' ? 'Saved privately to your account. Only you can read it; your crew only sees the daily check-in you share. It syncs between your iPhone, Mac, and PC.' : 'Saving on this device only. Sign in to sync privately.') + '</p>' +
     '<div class="row" style="margin-top:10px"><button class="btn" data-act="export" data-f="md">Export summary (.md)</button><button class="btn" data-act="export" data-f="json">Export everything (.json)</button><button class="btn" data-act="openRestore">Restore from backup</button>' + (window.CC_HOST && window.CC_HOST.signOut ? '<button class="btn btn-ghost btn-danger" data-act="signOut">Sign out</button>' : '') + '</div>' +
-    '<div class="divider"></div><p class="small faint">AI: ' + (AI.state === 'on' ? 'on' + (AI.tools ? ', with plan-change proposals' : '') + '. AI requests are billed to your Anthropic API key.' : 'off in this view.') + '</p>'));
+    '<div class="divider"></div><p class="small faint">AI: ' + (AI.state === 'on' ? 'on' + (AI.tools ? ', with plan-change proposals' : '') + '. AI requests are billed to your Anthropic API key.' : 'off (no AI key set).') + '</p>'));
 }
 function scheduleModal(date) {
   UI.schedDate = date || null;
@@ -1524,13 +1524,13 @@ function newThread(mode, firstMsg) {
   UI.threadId = th.id; saveUI(); return th;
 }
 function startThreadWith(mode, q) {
-  if (AI.state !== 'on') { toast('AI isn’t available in this view.'); return; }
+  if (AI.state !== 'on') { toast('AI is off in this version.'); return; }
   UI.mentorTab = 'chat'; UI.threadId = null; UI.newMode = mode; saveUI();
   if (location.hash !== '#mentor') location.hash = '#mentor';
   sendChat(q, mode);
 }
 async function sendChat(text, modeOverride) {
-  if (!AI.sample) { toast('AI isn’t available in this view.'); return; }
+  if (!AI.sample) { toast('AI is off in this version.'); return; }
   let th = currentThread(); if (!th) th = newThread(modeOverride || UI.newMode, text);
   th.messages.push({role:'user', content:text, at:Date.now()}); th.updatedAt = Date.now();
   if (th.messages.length > 80) th.messages.splice(0, th.messages.length - 80);
@@ -1780,7 +1780,7 @@ function schedTarget(date) { if (!date) return S.profile.schedule; const O = S.p
 function replanHTML() {
   const k = dkey(), ov = S.profile.overrides[k], busy = UI.busy.replan;
   return '<div class="card" style="margin-bottom:14px"><div class="card-head"><div><p class="eyebrow">Something changed?</p><h2>Replan my day</h2></div>' + (ov ? '<button class="btn btn-ghost btn-sm" data-act="resetDay" data-d="' + k + '">Back to normal today</button>' : '') + '</div>' +
-    (AI.state === 'on' ? '<form class="stack" data-form="replan" style="gap:8px"><textarea id="changeText" rows="2" placeholder="e.g. Dad wants to go over my plan tomorrow around noon. I still want today’s workout tonight." ' + (busy ? 'disabled' : '') + '></textarea><div class="row"><button class="btn btn-primary btn-sm" type="submit" ' + (busy ? 'disabled' : '') + '>' + ICON.spark + (busy ? 'Replanning… up to a minute' : 'Replan') + '</button><button class="btn btn-ghost btn-sm" type="button" data-act="editToday">Edit today by hand</button></div></form>' : '<div class="row"><p class="small muted">AI is off in this view.</p><button class="btn btn-ghost btn-sm" data-act="editToday">Edit today by hand</button></div>') +
+    (AI.state === 'on' ? '<form class="stack" data-form="replan" style="gap:8px"><textarea id="changeText" rows="2" placeholder="e.g. Dad wants to go over my plan tomorrow around noon. I still want today’s workout tonight." ' + (busy ? 'disabled' : '') + '></textarea><div class="row"><button class="btn btn-primary btn-sm" type="submit" ' + (busy ? 'disabled' : '') + '>' + ICON.spark + (busy ? 'Replanning… up to a minute' : 'Replan') + '</button><button class="btn btn-ghost btn-sm" type="button" data-act="editToday">Edit today by hand</button></div></form>' : '<div class="row"><p class="small muted">AI is off in this version.</p><button class="btn btn-ghost btn-sm" data-act="editToday">Edit today by hand</button></div>') +
     (UI.replanReply ? '<p class="small" style="margin-top:10px">' + esc(UI.replanReply) + '</p>' : '') + '</div>';
 }
 async function replan(text) {
