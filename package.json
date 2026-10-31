@@ -1,0 +1,6 @@
+{
+  "name": "command-center",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=18"}
+}
