@@ -155,6 +155,59 @@ table.tbl{border-collapse:collapse;width:100%;font-size:.88rem}
 .task.done .chk{background:var(--good);border-color:var(--good);color:var(--bg)}
 .task-title{flex:1;min-width:0;background:none;border:0;text-align:left;padding:0;cursor:pointer;color:var(--ink);font-size:.93rem;overflow-wrap:anywhere}
 .task.done .task-title{color:var(--ink-3);text-decoration:line-through}
+.task{flex-wrap:wrap}
+.task-more{flex-basis:100%;padding-left:34px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.task-where{display:flex;align-items:center;gap:6px;font-size:.8rem;color:var(--ink-2);min-width:0}
+.task-where svg{width:14px;height:14px;flex:none;fill:none;stroke:var(--info);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.task-where a,.task-where span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.task-where a{color:var(--info);text-decoration:none}
+.task-steps summary{cursor:pointer;font-size:.78rem;color:var(--accent);font-family:'Geist Mono',ui-monospace,monospace;letter-spacing:.04em;list-style:none;padding:2px 0}
+.task-steps summary::-webkit-details-marker{display:none}
+.task-steps summary::before{content:'\25B8';display:inline-block;margin-right:6px;transition:transform .15s}
+.task-steps[open] summary::before{transform:rotate(90deg)}
+.task-steps ol{list-style:none;margin:6px 0 2px;padding:0;display:flex;flex-direction:column;gap:4px}
+.step{display:flex;align-items:flex-start;gap:9px;width:100%;text-align:left;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:8px 10px;color:var(--ink);font:inherit;font-size:.86rem;line-height:1.35;cursor:pointer}
+.step .sn{flex:none;width:20px;height:20px;border-radius:6px;display:grid;place-items:center;font-size:.72rem;font-family:'Geist Mono',ui-monospace,monospace;background:var(--surface);border:1px solid var(--line-2);color:var(--ink-2)}
+.step .st{min-width:0;overflow-wrap:anywhere}
+.step.on{opacity:.62}.step.on .st{text-decoration:line-through}
+.step.on .sn{background:var(--good);border-color:var(--good);color:var(--bg)}
+.path{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:6px;position:relative}
+.path-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--sec);border-radius:12px;padding:10px 12px;color:var(--ink);font:inherit;cursor:pointer}
+.path-row:hover{border-color:var(--line-2);border-left-color:var(--sec)}
+.path-row.here{box-shadow:0 0 0 1px var(--sec),0 0 22px color-mix(in srgb,var(--sec) 28%,transparent)}
+.path-n{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-family:'Geist Mono',ui-monospace,monospace;font-size:.78rem;background:color-mix(in srgb,var(--sec) 18%,transparent);color:var(--sec);border:1px solid color-mix(in srgb,var(--sec) 45%,transparent)}
+.path-t{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.path-t b{font-weight:600;font-size:.92rem;overflow-wrap:anywhere}
+.paper{background:#F7F5EF;color:#1D2027;border-radius:14px;padding:18px 18px 16px;border-top:6px solid var(--sec);box-shadow:0 10px 30px rgba(0,0,0,.35);background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 27px,rgba(40,60,120,.09) 27px,rgba(40,60,120,.09) 28px);min-width:0}
+.paper-head{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.paper-sec{font-family:'Geist Mono',ui-monospace,monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:color-mix(in srgb,var(--sec) 65%,#1D2027)}
+.paper-gn{font-size:.72rem;color:#5B6070;background:rgba(0,0,0,.05);border-radius:6px;padding:1px 7px}
+.paper-title{font-size:1.35rem;line-height:1.2;letter-spacing:-.01em;margin:2px 0 8px;color:#12141A;overflow-wrap:anywhere;text-decoration:underline;text-decoration-color:var(--sec);text-decoration-thickness:3px;text-underline-offset:5px}
+.paper-one{font-size:1rem;line-height:1.55;margin:0 0 6px;font-weight:500}
+.paper-label{font-family:'Geist Mono',ui-monospace,monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:color-mix(in srgb,var(--sec) 60%,#1D2027);margin:12px 0 4px;font-weight:600}
+.paper-pts,.paper-chk{margin:0;padding-left:1.25em;display:flex;flex-direction:column;gap:2px;font-size:.98rem;line-height:1.6}
+.paper-pts li::marker{color:var(--sec)}
+.paper-formula{font-family:'Geist Mono',ui-monospace,monospace;font-size:.9rem;line-height:1.5;background:color-mix(in srgb,var(--sec) 16%,#fff);border:1.5px solid color-mix(in srgb,var(--sec) 55%,#fff);border-radius:8px;padding:8px 10px;overflow-wrap:anywhere}
+.paper-ex{margin:0;font-size:.95rem;line-height:1.6;font-style:italic;color:#2C3040}
+.paper-actions{margin-top:14px}
+.paper .btn-ghost{color:#3A3F4D;border-color:rgba(0,0,0,.15)}
+.nb-legend{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.nb-chip{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;padding:4px 10px;border-radius:999px;border:1px solid color-mix(in srgb,var(--sec) 45%,transparent);background:color-mix(in srgb,var(--sec) 12%,transparent);color:var(--ink)}
+.nb-chip::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--sec)}
+.nb-chip b{font-family:'Geist Mono',ui-monospace,monospace;font-weight:500;color:var(--ink-2)}
+.nb-sec{margin-bottom:18px}
+.nb-sec-h{display:flex;align-items:center;gap:8px;font-size:.95rem;margin:0 0 10px}
+.nb-sec-h::before{content:'';width:12px;height:12px;border-radius:4px;background:var(--sec);box-shadow:0 0 12px var(--sec)}
+.nb-grid{display:grid;gap:14px}
+.swatch{position:relative;cursor:pointer}.swatch input{position:absolute;opacity:0}.swatch span{display:block;width:28px;height:28px;border-radius:8px;background:var(--sec);border:2px solid transparent}.swatch input:checked+span{border-color:#fff;box-shadow:0 0 0 2px var(--sec)}
+.acts{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.act{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 10px;font-size:.84rem;border-radius:10px;padding:8px 10px;border:1px solid var(--line);background:var(--surface-2)}
+.act>span{min-width:0;overflow-wrap:anywhere}
+.act ul{flex-basis:100%;margin:2px 0 0;padding-left:1.1em;color:var(--ink-2);font-size:.8rem}
+.act-done{border-color:color-mix(in srgb,var(--good) 40%,transparent)}.act-done>span:first-child{color:var(--good)}
+.act-wait{border-color:color-mix(in srgb,var(--warn) 40%,transparent)}
+.act-learn{border-color:color-mix(in srgb,var(--info) 40%,transparent)}
+.auto-strip{margin-bottom:14px;border-color:color-mix(in srgb,var(--good) 35%,var(--line))}
 .area{font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap}
 .area[data-a="docstar"]{color:var(--accent)} .area[data-a="research"]{color:var(--info)} .area[data-a="body"],.area[data-a="gym"]{color:var(--good)}
 
@@ -719,8 +772,11 @@ function ensureShape() {
   if (!S.train.legsWed) { S.train.plan.days.forEach(d => { if (/^Legs/i.test(d.name) && d.dow === 'Thu') d.dow = 'Wed'; }); S.train.legsWed = true; setTimeout(() => touch('train'), 0); }
   FUNNEL.forEach(f => { if (S.money.funnel[f.k] == null) S.money.funnel[f.k] = 0; });
   S.deals = S.deals || {}; S.deals.working = S.deals.working || {}; S.deals.analyses = S.deals.analyses || [];
-  S.mentor = S.mentor || {}; ['threads','notes','sessions','proposals','decisions'].forEach(k => { S.mentor[k] = S.mentor[k] || []; });
+  S.mentor = S.mentor || {}; ['threads','notes','sessions','proposals','decisions','autoLog'].forEach(k => { S.mentor[k] = S.mentor[k] || []; });
   S.learn = S.learn || {}; S.learn.progress = S.learn.progress || {};
+  S.learn.pages = S.learn.pages || []; S.learn.order = S.learn.order || {}; if (S.learn.goodnotes == null) S.learn.goodnotes = '';
+  if (!Array.isArray(S.learn.sections) || !S.learn.sections.length) S.learn.sections = DEFAULT_SECTIONS.map(([id, name, color]) => ({id, name, color}));
+  if (S.profile && S.profile.mentorAuto == null) S.profile.mentorAuto = true;
 }
 
 /* ================= domain helpers ================= */
@@ -735,6 +791,7 @@ function blocksFor(k) {
 function gymTimeFor(k) { const b = blocksFor(k).find(x => x.area === 'gym' && !/mobility|rest day/i.test(x.label)); return b ? b.start : S.profile.goals.gymTime; }
 function planDayFor(k) { const o = S.profile && S.profile.workoutOverride && S.profile.workoutOverride[k]; if (o === 'rest') return null; if (o) { const od = S.train.plan.days.find(x => x.id === o); if (od) return od; } const dow = DOW[parseKey(k).getDay()]; return S.train.plan.days.find(d => d.dow === dow) || null; }
 function isDueOn(t, k) {
+  if (t.skipOn && t.skipOn[k]) return false;
   if (t.repeat) {
     if (t.archived || (t.createdAt && k < t.createdAt)) return false;
     const d = parseKey(k).getDay();
@@ -784,7 +841,9 @@ function fitnessSummary() {
 function findEx(id) { for (const d of S.train.plan.days) { const e = d.exercises.find(x => x.id === id); if (e) return e; } return null; }
 
 /* ================= proposals ================= */
-const CHANGE_TYPES = ['set_stage','set_priority','update_opportunity','add_opportunity','add_task','set_priorities','set_goal','add_talk','set_day_schedule','set_workout'];
+const CHANGE_TYPES = ['set_stage','set_priority','update_opportunity','add_opportunity','add_task','update_task','skip_task','remove_task','save_learn','set_priorities','set_goal','add_talk','set_day_schedule','set_workout'];
+const taskById = id => S.tasks.items.find(x => x.id === String(id || ''));
+const stepsTxt = c => (c.where ? ' · Where: ' + c.where : '') + (c.steps && c.steps.length ? ' · Steps: ' + c.steps.map((s, i) => (i + 1) + ') ' + s).join(' ') : '');
 const GOAL_KEYS = {incomeGoalMonthly:'Monthly income goal', weightGoal:'Goal weight', sleepTarget:'Sleep target (hours)', gymTime:'Gym start time', kcal:'Daily calories', protein:'Daily protein (g)'};
 function validChange(c) {
   if (!c || !CHANGE_TYPES.includes(c.type)) return false;
@@ -792,6 +851,18 @@ function validChange(c) {
   if (c.type === 'set_stage' && !STAGES.includes(c.stage)) return false;
   if (c.type === 'set_priority' && !(num(c.priority) >= 1 && num(c.priority) <= 5)) return false;
   if (c.type === 'add_task' && !String(c.title || '').trim()) return false;
+  if (['update_task','skip_task','remove_task'].includes(c.type)) {
+    c.taskId = String(c.taskId || ''); const t = taskById(c.taskId); if (!t) return false;
+    if (c.type === 'skip_task' && (!t.repeat || !/^\d{4}-\d{2}-\d{2}$/.test(c.date || ''))) return false;
+    if (c.type === 'remove_task' && t.repeat) return false;
+    if (c.type === 'update_task' && c.date && (t.repeat || !/^\d{4}-\d{2}-\d{2}$/.test(c.date))) delete c.date;
+  }
+  if (['add_task','update_task'].includes(c.type)) {
+    if (c.steps != null) c.steps = (Array.isArray(c.steps) ? c.steps : []).map(s => String(s || '').trim().slice(0, 160)).filter(Boolean).slice(0, 8);
+    if (c.where != null) c.where = String(c.where || '').trim().slice(0, 140);
+  }
+  if (c.type === 'update_task' && !['title','date','where','area'].some(x => c[x]) && !(c.steps && c.steps.length)) return false;
+  if (c.type === 'save_learn' && !String(c.title || '').trim()) return false;
   if (c.type === 'add_opportunity' && !String(c.name || '').trim()) return false;
   if (c.type === 'set_priorities' && !(Array.isArray(c.items) && c.items.length)) return false;
   if (c.type === 'set_goal' && !GOAL_KEYS[c.goal]) return false;
@@ -807,7 +878,11 @@ function describeChange(c) {
     case 'set_priority': return 'Set “' + o.name + '” priority to ' + c.priority + ' (was ' + o.priority + ')';
     case 'update_opportunity': return 'Update “' + o.name + '”: ' + ['nextAction','summary','risks'].filter(k => c[k]).map(k => ({nextAction:'next action', summary:'summary', risks:'risks'}[k]) + ' → “' + c[k] + '”').join('; ');
     case 'add_opportunity': return 'Add opportunity “' + c.name + '”' + (c.stage ? ' as ' + c.stage : ' as Idea');
-    case 'add_task': return 'Add task: “' + c.title + '”' + (c.date ? ' on ' + fmtDate(c.date) : '') + (c.repeat ? ' (' + (REPEATS[c.repeat] || c.repeat) + ')' : '');
+    case 'add_task': return 'Add task: “' + c.title + '”' + (c.date ? ' on ' + fmtDate(c.date) : '') + (c.repeat ? ' (' + (REPEATS[c.repeat] || c.repeat) + ')' : '') + stepsTxt(c);
+    case 'update_task': { const t = taskById(c.taskId), bits = []; if (c.title) bits.push('rename to “' + c.title + '”'); if (c.date) bits.push('move to ' + fmtDate(c.date)); return 'Update “' + t.title + '”' + (bits.length ? ': ' + bits.join(', ') : '') + stepsTxt(c); }
+    case 'skip_task': return 'Skip “' + taskById(c.taskId).title + '” on ' + fmtDate(c.date) + ' only';
+    case 'remove_task': return 'Remove task “' + taskById(c.taskId).title + '”';
+    case 'save_learn': return 'Save to Learn: “' + String(c.title).trim() + '”' + (c.section ? ' (' + c.section + ')' : '');
     case 'set_priorities': return 'Replace top priorities with: ' + c.items.slice(0, 3).map(x => '“' + x + '”').join(', ');
     case 'set_goal': return 'Change ' + GOAL_KEYS[c.goal] + ' to ' + c.value;
     case 'set_day_schedule': return 'New plan for ' + fmtDate(c.date) + ' only: ' + c.blocks.slice().sort((a, b) => toMin(a.start) - toMin(b.start)).map(b => fmtTime(b.start) + ' ' + b.label).join(' · ');
@@ -830,7 +905,11 @@ function applyChange(c) {
     case 'set_priority': { const o = opp(c.oppId); o.priority = Math.round(num(c.priority)); o.updatedAt = t; touch('money'); break; }
     case 'update_opportunity': { const o = opp(c.oppId); ['nextAction','summary','risks'].forEach(k => { if (c[k]) o[k] = String(c[k]); }); o.updatedAt = t; touch('money'); break; }
     case 'add_opportunity': S.money.opps.push({id:uid(), name:String(c.name), track:String(c.track || 'Other'), stage:STAGES.includes(c.stage) ? c.stage : 'Idea', priority:num(c.priority) || 3, summary:String(c.summary || ''), nextAction:String(c.nextAction || ''), risks:String(c.risks || ''), facts:'', assumptions:'', links:'', notes:'', createdAt:t, updatedAt:t}); touch('money'); break;
-    case 'add_task': S.tasks.items.push({id:uid(), title:String(c.title), area:AREAS[c.area] ? c.area : 'life', date:/^\d{4}-\d{2}-\d{2}$/.test(c.date || '') ? c.date : (c.repeat ? null : t), repeat:REPEATS[c.repeat] != null ? (c.repeat || '') : '', done:false, doneOn:{}, createdAt:t, note:''}); touch('tasks'); break;
+    case 'add_task': S.tasks.items.push({id:uid(), title:String(c.title), area:AREAS[c.area] ? c.area : 'life', date:/^\d{4}-\d{2}-\d{2}$/.test(c.date || '') ? c.date : (c.repeat ? null : t), repeat:REPEATS[c.repeat] != null ? (c.repeat || '') : '', done:false, doneOn:{}, createdAt:t, note:'', steps:c.steps || [], where:c.where || ''}); touch('tasks'); break;
+    case 'update_task': { const x = taskById(c.taskId); if (!x) break; if (c.title) x.title = String(c.title).slice(0, 140); if (c.date && !x.repeat) { x.date = c.date; if (x.done) { x.done = false; x.doneAt = null; } } if (AREAS[c.area]) x.area = c.area; if (c.steps && c.steps.length) { x.steps = c.steps; x.stepsDoneOn = {}; } if (c.where) x.where = c.where; touch('tasks'); break; }
+    case 'skip_task': { const x = taskById(c.taskId); if (!x) break; x.skipOn = x.skipOn || {}; x.skipOn[c.date] = true; const cut = addDays(t, -30); Object.keys(x.skipOn).forEach(d => { if (d < cut) delete x.skipOn[d]; }); touch('tasks'); break; }
+    case 'remove_task': S.tasks.items = S.tasks.items.filter(x => x.id !== c.taskId); touch('tasks'); break;
+    case 'save_learn': savePage(c); break;
     case 'set_priorities': S.profile.priorities = c.items.slice(0, 3).map(String); while (S.profile.priorities.length < 3) S.profile.priorities.push(''); touch('profile'); break;
     case 'set_goal': if (c.goal === 'kcal' || c.goal === 'protein') { S.body.targets[c.goal] = num(c.value); touch('body'); } else { S.profile.goals[c.goal] = c.goal === 'gymTime' ? String(c.value) : num(c.value); touch('profile'); } break;
     case 'set_day_schedule': { let bl = c.blocks.map(b => Object.assign({id:uid(), days:'all'}, b)); if (c.date === dkey()) { const n = new Date(), m = n.getHours() * 60 + n.getMinutes(); const past = blocksFor(c.date).filter(b => toMin(b.end) <= m).map(b => Object.assign({}, b, {id:uid()})); bl = past.concat(bl.filter(b => toMin(b.end) > m)); } S.profile.overrides[c.date] = bl; touch('profile'); break; }
@@ -853,10 +932,13 @@ function appContext() {
     todaySchedule:blocksFor(k).map(b => b.start + '-' + b.end + ' ' + b.label),
     opportunities:S.money.opps.map(o => ({id:o.id, name:o.name, track:o.track, stage:o.stage, priority:o.priority, summary:o.summary, nextAction:o.nextAction, verifiedFacts:o.facts, assumptions:o.assumptions, risks:o.risks})),
     docstarFunnel:S.money.funnel, thisMonthActual:monthTotals(k.slice(0, 7)),
-    openTasks:S.tasks.items.filter(t => !t.repeat && !t.done).slice(0, 30).map(t => ({title:t.title, area:t.area, date:t.date})),
+    todayChecklist:S.tasks.items.filter(t => isDueOn(t, k)).map(t => ({taskId:t.id, title:t.title, area:t.area, repeats:t.repeat || null, done:isDone(t, k), where:t.where || undefined, steps:(t.steps || []).length || undefined})),
+    openTasks:S.tasks.items.filter(t => !t.repeat && !t.done).slice(0, 30).map(t => ({taskId:t.id, title:t.title, area:t.area, date:t.date})),
     habits:S.tasks.items.filter(t => t.repeat && !t.archived).map(t => t.title + ' (' + t.repeat + ')'),
     fitness:fitnessSummary(),
-    learning:LESSONS.map(l => ({topic:l.title, done:!!(S.learn.progress[l.id] && S.learn.progress[l.id].read)})),
+    learnPath:learnItems().slice(0, 80).map(x => ({id:x.id, title:x.title, section:sectionOf(x.section).name, status:x.status, notebookPage:x.page ? (x.page.copied ? 'copied' : 'not copied yet') : 'none'})),
+    learnSections:S.learn.sections.map(x => x.name), goodnotesSetup:S.learn.goodnotes || '(not described yet)',
+    nowTime:fromMin(new Date().getHours() * 60 + new Date().getMinutes()),
     upcomingTalksWithDad:S.mentor.sessions.filter(s => !s.done).map(s => ({date:s.date, topic:s.topic})),
     recentNotes:S.mentor.notes.slice(-12).map(n => ({kind:n.kind, date:n.date, text:String(n.text).slice(0, 500)})),
     recentDecisions:S.mentor.decisions.slice(-10).map(d => ({date:d.date, summary:d.summary, status:d.status})),
@@ -875,8 +957,48 @@ const BASE_RULES = [
   '- Judge any financing by cash flow after debt service, insurance, operating costs, reserves, and a downside case. No debt for appearances or lifestyle. Loan approval is not income.',
   '- Be concise and direct: short paragraphs or tight bullets, end with the next concrete action.',
   '- Educational only on legal and tax topics; say when a CPA or attorney is needed.',
-  '- You cannot change the app yourself. When Ethan asks to change plans, priorities, opportunities, tasks, goals, or talks, use the propose_changes tool if you have it (use real opportunity ids from the data), then tell him the proposal is waiting for his approval in the app. Never claim a change is already made.'
+  '- Never claim a change is made unless a tool result says it applied.'
 ].join('\n');
+const CHAT_RULES = [
+  'How to talk: Ethan talks to you like any normal AI chat. Reply like a sharp, honest friend who knows business, money, and training: natural and direct, no menus, no "pick a mode". Work out what he wants from what he says (explain something, challenge an idea, prep for or debrief a talk with Dad, coach his training, or change his plan) and just do it. Ask one short question only if you truly cannot tell.',
+  'Running his day: when he mentions what he is doing, something that changed, or a to-do, update his checklist and schedule with propose_changes right away, without asking first. Give every new or changed task "where" (a website, app, or place) and 2-6 super simple steps. Use real taskIds and opportunity ids from the data. ' + '{{AUTO}}' + ' After a tool call, say in one short line what changed and what is waiting.',
+  'Learning: when he asks how something works, or you teach him something worth remembering, answer first, then save it with save_to_learn. He copies these pages by hand into GoodNotes because writing helps him learn, so keep them short and clean: a one-line summary, 3-6 key points under 15 words each, the formula if there is one, one worked example with his own numbers when possible, and 1-2 check-yourself questions. Choose the right section and set afterId to the topic it builds on, so his path stays in the order he should learn things. If the title already exists, update that page. Fill goodnotes (folder > notebook) from his GoodNotes setup; if he has not described it yet, ask him once.'
+].join('\n');
+const AUTO_TYPES = ['update_task','skip_task','remove_task','set_day_schedule','set_workout','save_learn'];
+const isAutoChange = c => AUTO_TYPES.includes(c.type) || (c.type === 'add_task' && !c.repeat);
+function chatRules() { return CHAT_RULES.replace('{{AUTO}}', S.profile.mentorAuto !== false ? 'Checklist and schedule changes apply immediately and he can undo them. Bigger changes (opportunities, goals, top 3, talks, repeating habits) wait for his approval.' : 'He turned off automatic changes, so every change waits for his approval in the app.'); }
+function applyOrQueue(changes, summary, source, threadId) {
+  const valid = (Array.isArray(changes) ? changes : []).map(c => Object.assign({}, c, {oppId: c && c.oppId != null ? String(c.oppId) : undefined})).filter(validChange);
+  const auto = S.profile.mentorAuto !== false ? valid.filter(isAutoChange) : [];
+  const rest = valid.filter(c => !auto.includes(c));
+  let applied = null;
+  if (auto.length) {
+    const items = auto.map(describeChange);
+    const snap = {tasks:clone(S.tasks), overrides:clone(S.profile.overrides || {}), workoutOverride:clone(S.profile.workoutOverride || {})};
+    if (auto.some(c => c.type === 'save_learn')) snap.learn = clone(S.learn);
+    auto.forEach(applyChange);
+    applied = {id:uid(), at:Date.now(), date:dkey(), summary:String(summary || 'Updated your day').slice(0, 300), items, snap, source:source || 'Mentor', undone:false};
+    const L = S.mentor.autoLog; L.push(applied); if (L.length > 15) L.splice(0, L.length - 15); L.slice(0, -3).forEach(r => { delete r.snap; });
+    logDecision(applied.summary, items, 'auto-applied', applied.source);
+    touch('tasks'); touch('profile'); touch('mentor');
+  }
+  const queued = rest.length ? queueProposal({summary:summary || 'Proposed plan changes', changes:rest}, source, threadId) : null;
+  return {applied, queued};
+}
+function lastAuto() { const L = S.mentor.autoLog || []; for (let i = L.length - 1; i >= 0; i--) if (!L[i].undone) return L[i].snap ? L[i] : null; return null; }
+function undoAuto(id) {
+  const r = (S.mentor.autoLog || []).find(x => x.id === id), last = lastAuto();
+  if (!r || r.undone || !r.snap) { toast('That change can’t be undone anymore.'); return; }
+  if (!last || last.id !== r.id) { toast('Undo the most recent change first.'); return; }
+  S.tasks = clone(r.snap.tasks); S.tasks._v = Date.now(); S.profile.overrides = clone(r.snap.overrides); S.profile.workoutOverride = clone(r.snap.workoutOverride);
+  if (r.snap.learn) { S.learn = clone(r.snap.learn); S.learn._v = Date.now(); touch('learn'); }
+  r.undone = true; logDecision('Undid: ' + r.summary, r.items, 'undone', r.source);
+  touch('tasks'); touch('profile'); touch('mentor'); toast('Undone');
+}
+function autoStripHTML() {
+  const r = lastAuto(); if (!r || r.date !== dkey()) return '';
+  return '<div class="card auto-strip"><div class="row-between" style="flex-wrap:nowrap;gap:10px"><div style="min-width:0"><p class="eyebrow" style="color:var(--good)">Mentor updated your day · ' + esc(new Date(r.at).toLocaleTimeString([], {hour:'numeric', minute:'2-digit'})) + '</p><p class="small" style="margin-top:2px">' + esc(r.summary) + '</p></div><button class="btn btn-sm" data-act="undoAuto" data-id="' + r.id + '">Undo</button></div><details style="margin-top:6px"><summary class="tiny faint" style="cursor:pointer">' + r.items.length + ' change' + (r.items.length === 1 ? '' : 's') + '</summary><ul class="small muted" style="margin:6px 0 0;padding-left:1.1em">' + r.items.map(i => '<li>' + esc(i) + '</li>').join('') + '</ul></details></div>';
+}
 const MODE_RULES = {
   explain:'Mode: Explain it. Explain the concept in plain English, then work one example using Ethan’s own deals or numbers from the app data (label them). End with one quick check question.',
   prep:'Mode: Prep for a conversation with his dad. Give: a 3-point opening, the objections Christopher is likely to raise with an honest assessment of each, the numbers Ethan must have ready (and which are missing), and 4–6 sharp questions to ask him.',
@@ -885,24 +1007,45 @@ const MODE_RULES = {
   plan:'Mode: Change my plan. Understand what Ethan wants to change, point out any tradeoff he may be missing, then queue the changes with propose_changes for his approval.',
   fitness:'Mode: Training coach. Use his logged workouts, weight trend, and food. He does not log sleep; if recovery seems off, ask how he slept rather than assuming. Give specific edits (exercise, sets, reps, weight, calories, protein) he can make in the Train tab. His goal is a lean, defined, aesthetic physique: emphasize shoulders (especially side delts), chest, back width, and arms; legs once a week. Lean gain only: about 0.25 lb per week, high protein, daily steps. Not medical advice.'
 };
-function rulesFor(mode) { return BASE_RULES + '\n\n' + (MODE_RULES[mode] || MODE_RULES.explain) + '\n\nCurrent app data (JSON):\n' + appContext(); }
+function rulesFor(mode) { return BASE_RULES + '\n\n' + chatRules() + (MODE_RULES[mode] ? '\n\nThis conversation started from a shortcut. ' + MODE_RULES[mode] : '') + '\n\nCurrent app data (JSON):\n' + appContext(); }
 function proposeTool(threadId) {
   return { name:'propose_changes',
-    description:'Queue changes to Ethan’s plan for his approval: opportunity stage, priority, or next action; new opportunities; new tasks; his top 3 priorities; goals; mentor talks; a one-day schedule change (set_day_schedule); which workout he does on a date (set_workout). Nothing changes until he approves in the app. Returns the proposal id.',
+    description:'Change Ethan\u2019s plan: his checklist (add, edit, move, skip for one day, or remove tasks, with simple steps and where to go), his schedule for a specific day (set_day_schedule), which workout he does (set_workout), opportunities, top 3 priorities, goals, and talks with Dad. ' + (S.profile.mentorAuto !== false ? 'Checklist and schedule changes apply right away and he can undo them; everything else waits for his approval.' : 'Every change waits for his approval.') + ' Returns what applied now and what is waiting.',
     inputSchema:{type:'object', properties:{
       summary:{type:'string', description:'One sentence: what changes and why'},
       changes:{type:'array', items:{type:'object', properties:{
-        type:{type:'string', enum:CHANGE_TYPES}, oppId:{type:'string'}, stage:{type:'string', enum:STAGES}, priority:{type:'integer', minimum:1, maximum:5},
+        type:{type:'string', enum:CHANGE_TYPES.filter(t => t !== 'save_learn')}, oppId:{type:'string'}, stage:{type:'string', enum:STAGES}, priority:{type:'integer', minimum:1, maximum:5},
         name:{type:'string'}, track:{type:'string'}, summary:{type:'string'}, nextAction:{type:'string'}, risks:{type:'string'},
-        title:{type:'string'}, area:{type:'string', enum:Object.keys(AREAS)}, date:{type:'string', description:'YYYY-MM-DD'}, repeat:{type:'string', enum:['','daily','weekdays','gym','sun']},
+        title:{type:'string'}, area:{type:'string', enum:Object.keys(AREAS)}, taskId:{type:'string', description:'Existing task id (update_task, skip_task, remove_task)'}, where:{type:'string', description:'Website, app, or place for the task'}, steps:{type:'array', items:{type:'string'}, description:'2-6 super simple step-by-step actions'}, date:{type:'string', description:'YYYY-MM-DD'}, repeat:{type:'string', enum:['','daily','weekdays','gym','sun']},
         blocks:{type:'array', description:'Full schedule for that one date', items:{type:'object', properties:{start:{type:'string'}, end:{type:'string'}, label:{type:'string'}, area:{type:'string'}}}}, dayName:{type:'string', description:'Training day name, empty for rest'},
         items:{type:'array', items:{type:'string'}, description:'Top 3 priorities'}, goal:{type:'string', enum:Object.keys(GOAL_KEYS)}, value:{type:'string', description:'New value: a number, or HH:MM for gymTime'}, topic:{type:'string'}
       }, required:['type']}}
     }, required:['summary','changes']},
-    execute:(input) => { const p = queueProposal(input, 'Mentor chat', threadId); if (!p) throw new Error('None of those changes were valid. Check opportunity ids and fields.'); scheduleRender(); return {queued:true, proposalId:p.id, changes:p.changes.length, status:'waiting for Ethan’s approval'}; }
+    execute:(input) => {
+      const r = applyOrQueue(input && input.changes, input && input.summary, 'Mentor chat', threadId);
+      if (!r.applied && !r.queued) throw new Error('None of those changes were valid. Use real taskIds and opportunity ids from the data.');
+      if (r.applied) pushAction(threadId, {kind:'applied', text:r.applied.summary, items:r.applied.items, id:r.applied.id});
+      if (r.queued) pushAction(threadId, {kind:'queued', text:r.queued.summary, items:r.queued.items, id:r.queued.id});
+      scheduleRender();
+      return {appliedNow:r.applied ? r.applied.items : [], waitingForApproval:r.queued ? r.queued.items : []};
+    }
   };
 }
-const CHANGE_FORMAT = 'Reply with only JSON: {"summary": string, "changes": [ ... ]}. Each change has a "type" from: set_stage {oppId, stage}, set_priority {oppId, priority 1-5}, update_opportunity {oppId, nextAction?, summary?, risks?}, add_opportunity {name, track, stage?, summary?, nextAction?}, add_task {title, area (docstar|research|body|school|learn|life), date YYYY-MM-DD or null, repeat ("" | daily | weekdays | gym | sun)}, set_priorities {items: [3 strings]}, set_goal {goal (incomeGoalMonthly|weightGoal|sleepTarget|gymTime|kcal|protein), value}, add_talk {date, topic}, set_day_schedule {date, blocks: [{start HH:MM, end HH:MM, label, area}]} (replaces that one day only), set_workout {date, dayName} (empty dayName = rest). Stages: ' + STAGES.join(', ') + '. Use only opportunity ids that exist in the data. Return {"summary":"No changes","changes":[]} if nothing should change.';
+function pushAction(threadId, a) { UI.actions = UI.actions || {}; (UI.actions[threadId] = UI.actions[threadId] || []).push(a); }
+function learnTool(threadId) {
+  return { name:'save_to_learn',
+    description:'Save something Ethan should know to his Learn tab: his learning path (ordered by what he should learn first) and his notebook, which he copies by hand into GoodNotes. Use it whenever he asks how something works or learns something worth keeping. Saves immediately. If a page with the same title exists, it is updated.',
+    inputSchema:{type:'object', properties:{
+      title:{type:'string', description:'Short topic title'}, section:{type:'string', description:'One of his sections (' + S.learn.sections.map(x => x.name).join(', ') + ') or a new one'},
+      oneLine:{type:'string', description:'One-sentence summary'}, points:{type:'array', items:{type:'string'}, description:'3-6 key points, each under 15 words'},
+      formula:{type:'string'}, example:{type:'string', description:'One short worked example, with his numbers when possible'}, check:{type:'array', items:{type:'string'}, description:'1-2 check-yourself questions'},
+      goodnotes:{type:'string', description:'GoodNotes folder > notebook from his setup, or empty'}, status:{type:'string', enum:['next','learning','know']},
+      afterId:{type:'string', description:'Id of the path item this builds on, or "start"'}
+    }, required:['title','section','oneLine','points']},
+    execute:(input) => { const p = savePage(Object.assign({}, input || {}, {source:'mentor'})); if (!p) throw new Error('A title is required.'); pushAction(threadId, {kind:'learn', text:p.title, id:p.lessonId || p.id}); scheduleRender(); return {saved:true, pageId:p.id, stepInPath:learnItems().findIndex(x => x.id === (p.lessonId || p.id)) + 1}; }
+  };
+}
+const CHANGE_FORMAT = 'Reply with only JSON: {"summary": string, "changes": [ ... ]}. Each change has a "type" from: set_stage {oppId, stage}, set_priority {oppId, priority 1-5}, update_opportunity {oppId, nextAction?, summary?, risks?}, add_opportunity {name, track, stage?, summary?, nextAction?}, add_task {title, area (docstar|research|body|school|learn|life), date YYYY-MM-DD or null, repeat ("" | daily | weekdays | gym | sun), where?, steps? [2-6 simple strings]}, update_task {taskId, title?, date? (one-time tasks only), where?, steps?}, skip_task {taskId, date} (repeating tasks only, that one date), remove_task {taskId} (one-time tasks only), set_priorities {items: [3 strings]}, set_goal {goal (incomeGoalMonthly|weightGoal|sleepTarget|gymTime|kcal|protein), value}, add_talk {date, topic}, set_day_schedule {date, blocks: [{start HH:MM, end HH:MM, label, area}]} (replaces that one day only), set_workout {date, dayName} (empty dayName = rest). Stages: ' + STAGES.join(', ') + '. Use only opportunity ids that exist in the data. Return {"summary":"No changes","changes":[]} if nothing should change.';
 
 async function aiGuidance(btn) {
   if (!AI.sample) return;
@@ -970,7 +1113,7 @@ function greeting() { const h = new Date().getHours(); return h < 5 ? 'Up early,
 function viewToday() {
   const now = new Date();
   return '<section class="page-head"><div><p class="eyebrow">' + DOW[now.getDay()] + ' · ' + MONTHS[now.getMonth()] + ' ' + now.getDate() + '</p><h1>' + greeting() + '</h1></div></section>' +
-    proposalsHTML() + replanHTML() +
+    proposalsHTML() + autoStripHTML() + replanHTML() +
     '<div class="grid-today"><div class="col">' +
       '<div class="card now" id="nowcard">' + nowCardHTML() + '</div>' + gymCardHTML() + checklistHTML(dkey()) +
     '</div><div class="col">' + guidanceHTML() + crewMiniHTML() + prioritiesHTML() + moneyMiniHTML() + oppsMiniHTML() + learnMiniHTML() + talksMiniHTML() + '</div></div>';
@@ -1016,16 +1159,29 @@ function checklistHTML(k) {
   const due = S.tasks.items.filter(t => isDueOn(t, k));
   due.sort((a, b) => (isDone(a, k) - isDone(b, k)) || ((a.date || '9') < (b.date || '9') ? -1 : 1));
   const doneN = due.filter(t => isDone(t, k)).length;
-  const rows = due.map(t => taskRow(t, k)).join('');
+  const next = due.find(t => !isDone(t, k) && Array.isArray(t.steps) && t.steps.length);
+  const rows = due.map(t => taskRow(t, k, next && next.id === t.id)).join('');
   return '<div class="card"><div class="card-head"><div><p class="eyebrow">Checklist · ' + doneN + '/' + due.length + ' done</p><h2>Today</h2></div><button class="btn btn-ghost btn-sm" data-act="allTasks">All tasks</button></div>' +
     (rows ? '<ul class="tasks">' + rows + '</ul>' : '<div class="empty">Nothing due today. Add a task below.</div>') +
     '<form class="inline-form" data-form="addTask" style="margin-top:12px"><input type="text" id="newTask" placeholder="Add a task for today" autocomplete="off" aria-label="New task"><select id="newTaskArea" aria-label="Area">' + Object.keys(AREAS).map(a => '<option value="' + a + '">' + AREAS[a] + '</option>').join('') + '</select><button class="btn" type="submit">' + ICON.plus.replace('<svg', '<svg style="width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2"') + 'Add</button></form></div>';
 }
-function taskRow(t, k) {
+function whereHTML(w) {
+  w = String(w || '').trim(); if (!w) return '';
+  const web = w.match(/^(https?:\/\/\S+|(?:[\w-]+\.)+(?:com|io|org|net|ai|co|app|edu|gov|us)(?:\/\S*)?)$/i);
+  let href = null;
+  if (web) href = /^https?:/i.test(web[1]) ? web[1] : 'https://' + web[1];
+  else if (!/\b(home|desk|apartment|apt|room|couch|bed|kitchen|phone|laptop|computer|online|inbox|app|anywhere)\b/i.test(w)) href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(w);
+  const pin = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="' + (web ? 'M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1' : 'M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z M12 12.2a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4z') + '"/></svg>';
+  return '<div class="task-where">' + pin + (href ? '<a href="' + esc(href) + '" target="_blank" rel="noopener noreferrer">' + esc(w) + '</a>' : '<span>' + esc(w) + '</span>') + '</div>';
+}
+function taskRow(t, k, autoOpen) {
   const d = isDone(t, k), over = !t.repeat && !d && t.date && t.date < k;
+  const st = Array.isArray(t.steps) ? t.steps : [], sd = (t.stepsDoneOn && t.stepsDoneOn[k]) || [];
+  const open = UI.stepsOpen && t.id in UI.stepsOpen ? UI.stepsOpen[t.id] : !!autoOpen;
+  const more = (t.where || st.length) ? '<div class="task-more">' + whereHTML(t.where) + (st.length ? '<details class="task-steps" data-id="' + t.id + '" ' + (open ? 'open' : '') + '><summary>' + (sd.length ? sd.length + ' of ' + st.length + ' steps done' : st.length + ' steps') + '</summary><ol>' + st.map((s, i) => { const on = sd.includes(i); return '<li><button class="step' + (on ? ' on' : '') + '" data-act="toggleStep" data-id="' + t.id + '" data-k="' + k + '" data-i="' + i + '" aria-pressed="' + on + '"><span class="sn">' + (on ? '✓' : i + 1) + '</span><span class="st">' + esc(s) + '</span></button></li>'; }).join('') + '</ol></details>' : '') + '</div>' : '';
   return '<li class="task ' + (d ? 'done' : '') + '"><button class="chk" data-act="toggleTask" data-id="' + t.id + '" data-k="' + k + '" aria-label="' + (d ? 'Mark not done' : 'Mark done') + '" aria-pressed="' + d + '">' + ICON.check + '</button>' +
     '<button class="task-title" data-act="editTask" data-id="' + t.id + '">' + esc(t.title) + '</button>' +
-    (over ? '<span class="pill crit">Overdue</span>' : '') + (t.repeat ? '<span class="tiny faint" title="' + esc(REPEATS[t.repeat]) + '">↻</span>' : '') + '<span class="area" data-a="' + esc(t.area) + '">' + esc(AREAS[t.area] || t.area) + '</span></li>';
+    (over ? '<span class="pill crit">Overdue</span>' : '') + (t.repeat ? '<span class="tiny faint" title="' + esc(REPEATS[t.repeat]) + '">↻</span>' : '') + '<span class="area" data-a="' + esc(t.area) + '">' + esc(AREAS[t.area] || t.area) + '</span>' + more + '</li>';
 }
 function guidanceHTML() {
   const g = S.profile.guidance, today = g && g.date === dkey();
@@ -1055,9 +1211,8 @@ function oppsMiniHTML() {
     (list.length ? '<div class="stack" style="gap:10px">' + list.map(o => '<div><div class="row-between"><b class="small">' + esc(o.name) + '</b><span class="pill ' + STAGE_TONE[o.stage] + '">' + esc(o.stage) + '</span></div>' + (o.nextAction ? '<p class="small muted">Next: ' + esc(o.nextAction) + '</p>' : '') + '</div>').join('') + '</div>' : '<div class="empty">No active opportunities.</div>') + '</div>';
 }
 function learnMiniHTML() {
-  const done = LESSONS.filter(l => S.learn.progress[l.id] && S.learn.progress[l.id].read).length;
-  const next = LESSONS.find(l => !(S.learn.progress[l.id] && S.learn.progress[l.id].read));
-  return '<div class="card"><div class="card-head"><div><p class="eyebrow">Learning · ' + done + '/' + LESSONS.length + ' lessons</p><h2>' + (next ? esc(next.title) : 'All lessons done') + '</h2></div>' + (next ? '<a class="btn btn-ghost btn-sm" href="#learn" data-act="openLesson" data-id="' + next.id + '">Open</a>' : '') + '</div><div class="bar"><i style="width:' + (done / LESSONS.length * 100) + '%"></i></div></div>';
+  const items = learnItems(), here = items.find(x => x.status !== 'know'), known = items.filter(x => x.status === 'know').length, toCopy = S.learn.pages.filter(p => !p.copied).length;
+  return '<div class="card"><div class="card-head"><div><p class="eyebrow">Learning \u00b7 ' + known + '/' + items.length + ' known' + (toCopy ? ' \u00b7 ' + toCopy + ' to copy' : '') + '</p><h2>' + (here ? esc(here.title) : 'Path complete') + '</h2></div>' + (here ? '<a class="btn btn-ghost btn-sm" href="#learn" data-act="openItem" data-id="' + here.id + '">Open</a>' : '') + '</div><div class="bar"><i style="width:' + (items.length ? known / items.length * 100 : 0).toFixed(1) + '%"></i></div></div>';
 }
 function talksMiniHTML() {
   const up = S.mentor.sessions.filter(s => !s.done).sort((a, b) => a.date < b.date ? -1 : 1)[0];
@@ -1234,28 +1389,38 @@ function dealOutHTML(type, v) {
 function currentThread() { return S.mentor.threads.find(t => t.id === UI.threadId) || null; }
 function viewMentor() {
   const body = {chat:viewChat, talks:viewTalks, notes:viewNotes, decisions:viewDecisions}[UI.mentorTab] || viewChat;
-  return '<section class="page-head"><div><p class="eyebrow">Mentor · objective, never a yes-man</p><h1>Mentor</h1></div>' + segHTML('mentorTab', [['chat','Chat'],['talks','Talks with Dad'],['notes','Notes'],['decisions','Decisions']]) + '</section>' + proposalsHTML() + body();
+  return '<section class="page-head"><div><p class="eyebrow">Mentor · objective, never a yes-man</p><h1>Mentor</h1></div><div class="row" style="gap:8px">' + segHTML('mentorTab', [['chat','Chat'],['talks','Talks with Dad'],['notes','Notes'],['decisions','Decisions']]) + '<button class="btn btn-sm" data-act="openHandoff">\u21C4 Handoff</button></div></section>' + proposalsHTML() + autoStripHTML() + body();
+}
+function actionsHTML(m) {
+  if (!m.actions || !m.actions.length) return '';
+  const last = lastAuto();
+  return '<div class="acts">' + m.actions.map(a => {
+    if (a.kind === 'learn') return '<div class="act act-learn"><span>📒 Saved to Learn: <b>' + esc(a.text) + '</b></span><button class="btn btn-ghost btn-sm" data-act="openItem" data-id="' + esc(a.id) + '">Open</button></div>';
+    if (a.kind === 'applied') { const rec = (S.mentor.autoLog || []).find(r => r.id === a.id); return '<div class="act act-done"><span>✓ ' + esc(a.text) + (rec && rec.undone ? ' <span class="tiny faint">(undone)</span>' : '') + '</span>' + (last && last.id === a.id ? '<button class="btn btn-ghost btn-sm" data-act="undoAuto" data-id="' + esc(a.id) + '">Undo</button>' : '') + (a.items && a.items.length ? '<ul>' + a.items.map(i => '<li>' + esc(i) + '</li>').join('') + '</ul>' : '') + '</div>'; }
+    const p = S.mentor.proposals.find(x => x.id === a.id);
+    return '<div class="act act-wait"><span>⏳ Waiting for your approval: ' + esc(a.text) + (p && p.status !== 'pending' ? ' <span class="tiny faint">(' + esc(p.status) + ')</span>' : '') + '</span></div>';
+  }).join('') + '</div>';
 }
 function viewChat() {
   const th = currentThread();
   const threads = S.mentor.threads.slice().sort((a, b) => b.updatedAt - a.updatedAt);
-  const side = '<div class="card"><button class="btn btn-primary" style="width:100%" data-act="newThread">+ New conversation</button><div class="threads" style="margin-top:10px">' + (threads.length ? threads.map(t => '<button class="thread-btn" data-act="openThread" data-id="' + t.id + '" aria-current="' + (th && th.id === t.id) + '"><b>' + esc(t.title) + '</b><span class="tiny faint">' + esc(MODES[t.mode] ? MODES[t.mode].label : '') + ' · ' + fmtDate(dkey(new Date(t.updatedAt))) + '</span></button>').join('') : '<p class="small muted" style="padding:8px">No conversations yet.</p>') + '</div></div>';
+  const side = '<div class="card"><button class="btn btn-primary" style="width:100%" data-act="newThread">+ New chat</button><label class="row small" style="gap:8px;margin-top:12px;align-items:flex-start"><input type="checkbox" data-ch="mentorAuto" ' + (S.profile.mentorAuto !== false ? 'checked' : '') + ' style="margin-top:3px"> <span>Let the mentor change my checklist and schedule without asking. <span class="tiny faint">You can undo anything.</span></span></label><div class="threads" style="margin-top:10px">' + (threads.length ? threads.map(t => '<button class="thread-btn" data-act="openThread" data-id="' + t.id + '" aria-current="' + (th && th.id === t.id) + '"><b>' + esc(t.title) + '</b><span class="tiny faint">' + fmtDate(dkey(new Date(t.updatedAt))) + '</span></button>').join('') : '<p class="small muted" style="padding:8px">No chats yet.</p>') + '</div></div>';
   let main;
+  const fallback = !AI.tools ? '<button class="btn btn-sm" data-act="chatChecklist">Make checklist</button><button class="btn btn-sm" data-act="chatPropose">Propose changes</button>' : '';
   if (AI.state === 'off') main = '<div class="card"><h2>AI is off in this view</h2><p class="small muted" style="margin-top:6px">Open this app from Claude and allow it to use Claude to talk with your mentor. Notes, talks, and decisions still work here.</p></div>';
-  else if (!th) main = '<div class="card stack"><div><h2>What do you want to work on?</h2><p class="small muted">Pick a mode, then ask. The mentor sees your plan, pipeline, deals, and training logs. It can propose changes, but nothing changes until you approve.</p></div>' + modesHTML() +
-    '<div class="stack" style="gap:6px">' + ['Explain what my dad meant by debt service, using my rental example.','My dad thinks the car rental is too risky. Who has the stronger argument?','Move the box truck to Rejected and add a task to compare two STR markets this week.','Help me defend the Docstar commission idea with actual numbers.'].map(q => '<button class="btn btn-ghost btn-sm" style="justify-content:flex-start;white-space:normal;text-align:left" data-act="starter" data-q="' + esc(q) + '">“' + esc(q) + '”</button>').join('') + '</div>' + composerHTML() + '</div>';
+  else if (!th) main = '<div class="card stack"><div><h2>What’s on your mind?</h2><p class="small muted">Talk to it like any AI. It sees your schedule, checklist, pipeline, deals, training, and learning path. It can rearrange your day and checklist, save what you learn to your notebook, prep you for Dad, and push back when you’re wrong.</p></div>' + composerHTML() + '</div>';
   else {
     const st = UI.streaming && UI.streaming.threadId === th.id ? UI.streaming : null;
-    main = '<div class="card"><div class="row-between" style="margin-bottom:12px"><div><h2>' + esc(th.title) + '</h2><p class="tiny faint">' + esc(MODES[th.mode] ? MODES[th.mode].label + ': ' + MODES[th.mode].hint : '') + '</p></div><div class="row"><button class="btn btn-sm" data-act="chatChecklist" ' + (st ? 'disabled' : '') + '>Make checklist</button><button class="btn btn-sm" data-act="chatPropose" ' + (st ? 'disabled' : '') + '>Propose changes</button><button class="btn btn-ghost btn-sm btn-danger" data-act="rmThread" data-id="' + th.id + '">Delete</button></div></div>' +
-      '<div class="msgs">' + th.messages.map((m, i) => m.role === 'user' ? '<div class="msg user">' + esc(m.content) + '</div>' : '<div class="msg assistant"><div class="ai-out">' + md(m.content) + '</div><div class="msg-tools"><button class="btn btn-ghost btn-sm" data-act="saveNote" data-i="' + i + '">Save as note</button></div></div>').join('') +
-      (st ? '<div class="msg assistant"><div class="ai-out" id="streamBubble">' + (st.text ? md(st.text) : '<div class="thinking"><i></i><i></i><i></i> Thinking. This can take up to a minute.</div>') + '</div><div class="msg-tools"><button class="btn btn-sm" data-act="stopChat">Stop</button></div></div>' : '') +
+    main = '<div class="card"><div class="row-between" style="margin-bottom:12px"><h2 style="min-width:0;overflow-wrap:anywhere">' + esc(th.title) + '</h2><div class="row">' + fallback + '<button class="btn btn-ghost btn-sm btn-danger" data-act="rmThread" data-id="' + th.id + '">Delete</button></div></div>' +
+      '<div class="msgs">' + th.messages.map((m, i) => m.role === 'user' ? '<div class="msg user">' + esc(m.content) + '</div>' : '<div class="msg assistant"><div class="ai-out">' + md(m.content) + '</div>' + actionsHTML(m) + '<div class="msg-tools"><button class="btn btn-ghost btn-sm" data-act="saveNote" data-i="' + i + '">Save as note</button></div></div>').join('') +
+      (st ? '<div class="msg assistant"><div class="ai-out" id="streamBubble">' + (st.text ? md(st.text) : '<div class="thinking"><i></i><i></i><i></i> Thinking…</div>') + '</div>' + actionsHTML({actions:UI.actions && UI.actions[th.id]}) + '<div class="msg-tools"><button class="btn btn-sm" data-act="stopChat">Stop</button></div></div>' : '') +
       (UI.busy.chatJson ? '<div class="thinking"><i></i><i></i><i></i> ' + esc(UI.busy.chatJson) + '</div>' : '') + '<div id="msgEnd"></div></div>' + composerHTML(!!st) + '</div>';
   }
   return '<div class="chat-layout">' + side + '<div style="min-width:0">' + main + '</div></div>';
 }
 function modesHTML() { return '<div class="modes" role="group" aria-label="Mentor mode">' + Object.keys(MODES).map(m => '<button type="button" class="mode" data-act="pickMode" data-v="' + m + '" aria-pressed="' + (UI.newMode === m) + '" title="' + esc(MODES[m].hint) + '">' + MODES[m].label + '</button>').join('') + '</div>'; }
 function composerHTML(disabled) {
-  return '<form class="composer" data-form="chat"><textarea id="chatInput" placeholder="Ask your mentor… (e.g. “Dad says debt service will kill the Airbnb. Is he right?”)" ' + (disabled ? 'disabled' : '') + '></textarea><div class="row-between"><span class="tiny faint">Enter to send · Shift+Enter for a new line</span><button class="btn btn-primary" type="submit" ' + (disabled ? 'disabled' : '') + '>Send</button></div></form>';
+  return '<form class="composer" data-form="chat"><textarea id="chatInput" placeholder="Message your mentor…" ' + (disabled ? 'disabled' : '') + '></textarea><div class="row-between"><span class="tiny faint">Enter to send · Shift+Enter for a new line</span><button class="btn btn-primary" type="submit" ' + (disabled ? 'disabled' : '') + '>Send</button></div></form>';
 }
 function viewTalks() {
   const list = S.mentor.sessions.slice().sort((a, b) => (a.done - b.done) || (a.date < b.date ? -1 : 1));
@@ -1277,8 +1442,167 @@ function viewDecisions() {
     (list.length ? list.map(d => '<div class="note-item"><div class="row-between"><b class="small">' + esc(d.summary) + '</b><span class="pill ' + (d.status === 'approved' ? 'good' : d.status === 'rejected' ? 'crit' : '') + '">' + esc(d.status) + '</span></div><span class="tiny faint">' + fmtDate(d.date) + ' · ' + esc(d.source || '') + '</span>' + (d.items && d.items.length ? '<ul class="small muted" style="margin:4px 0 0;padding-left:1.1em">' + d.items.map(i => '<li>' + esc(i) + '</li>').join('') + '</ul>' : '') + '</div>').join('') : '<div class="empty">No decisions logged yet.</div>') + '</div>';
 }
 
-/* ---------- learn ---------- */
+/* ---------- learn: path + notebook ---------- */
+const SECTION_COLORS = ['#3DF5A8','#B36BFF','#4CC9FF','#FFB547','#FF6FB5','#7C83FF','#A7B0C0','#FF4D6D'];
+const DEFAULT_SECTIONS = [['money','Money basics','#3DF5A8'],['credit','Business & credit','#FFB547'],['deals','Deals & investing','#B36BFF'],['sales','Docstar & sales','#4CC9FF'],['fitness','Fitness','#FF6FB5'],['school','School & CS','#7C83FF'],['life','Life','#A7B0C0']];
+const LESSON_SECTION = {cashflow:'money', credit:'credit', debt:'credit', leverage:'credit', underwriting:'deals', str:'deals', cars:'deals', structures:'credit', taxes:'money', negotiation:'sales'};
+const STATUS = {next:'Up next', learning:'Learning', know:'Know it'};
+const strF = (v, n) => String(v == null ? '' : v).trim().slice(0, n);
+const arrF = (v, max, n) => (Array.isArray(v) ? v : (v ? String(v).split('\n') : [])).map(s => String(s || '').replace(/^\s*(\d+[.)]|[-*•])\s*/, '').trim().slice(0, n)).filter(Boolean).slice(0, max);
+function sectionOf(id) { return S.learn.sections.find(s => s.id === id) || {id:id || 'life', name:'Other', color:'#A7B0C0'}; }
+function resolveSection(name) {
+  const n = String(name || '').trim(); if (!n) return sectionOf('life');
+  let s = S.learn.sections.find(x => x.id === n || x.name.toLowerCase() === n.toLowerCase());
+  if (!s) { s = {id:uid(), name:n.slice(0, 40), color:SECTION_COLORS[S.learn.sections.length % SECTION_COLORS.length]}; S.learn.sections.push(s); }
+  return s;
+}
+function lessonStatus(id) { const p = S.learn.progress[id] || {}; return p.read ? 'know' : (p.status || 'next'); }
+function learnItems() {
+  const items = LESSONS.map((l, i) => ({id:l.id, kind:'lesson', title:l.title, section:LESSON_SECTION[l.id] || 'money', status:lessonStatus(l.id), def:(i + 1) * 10, page:S.learn.pages.find(p => p.lessonId === l.id) || null}))
+    .concat(S.learn.pages.filter(p => !p.lessonId).map(p => ({id:p.id, kind:'page', title:p.title, section:p.section, status:p.status || 'learning', def:1000 + (p.createdAt || 0) / 1e13, page:p})));
+  items.forEach(x => { x.order = S.learn.order[x.id] != null ? S.learn.order[x.id] : x.def; });
+  return items.sort((a, b) => a.order - b.order);
+}
+function placeAfter(id, afterId) {
+  const items = learnItems().filter(x => x.id !== id); let o;
+  if (afterId === 'start') o = (items[0] ? items[0].order : 10) - 5;
+  else { const i = items.findIndex(x => x.id === afterId || x.title.toLowerCase() === String(afterId || '').toLowerCase()); if (i < 0) o = (items.length ? items[items.length - 1].order : 0) + 10; else o = items[i + 1] ? (items[i].order + items[i + 1].order) / 2 : items[i].order + 10; }
+  S.learn.order[id] = o;
+}
+function savePage(c) {
+  const title = strF(c.title, 90); if (!title) return null;
+  const sec = resolveSection(c.section);
+  const f = {title, section:sec.id, oneLine:strF(c.oneLine || c.summary, 240), points:arrF(c.points, 8, 160), formula:strF(c.formula, 200), example:strF(c.example, 500), check:arrF(c.check || c.questions, 3, 200), goodnotes:strF(c.goodnotes, 120)};
+  let p = c.id ? S.learn.pages.find(x => x.id === c.id) : null;
+  if (!p) p = S.learn.pages.find(x => x.title.toLowerCase() === title.toLowerCase() || (c.lessonId && x.lessonId === c.lessonId));
+  if (p) {
+    const before = JSON.stringify([p.oneLine, p.points, p.formula, p.example, p.check]);
+    Object.keys(f).forEach(k => { const v = f[k]; if (Array.isArray(v) ? v.length : v) p[k] = v; });
+    if (c.status && STATUS[c.status] && !p.lessonId) p.status = c.status;
+    if (JSON.stringify([p.oneLine, p.points, p.formula, p.example, p.check]) !== before) p.copied = null;
+    p.updatedAt = Date.now();
+  } else {
+    p = Object.assign({id:uid(), status:STATUS[c.status] ? c.status : 'learning', createdAt:Date.now(), updatedAt:Date.now(), copied:null, source:c.source || 'mentor', lessonId:c.lessonId || null}, f);
+    S.learn.pages.push(p); if (!p.lessonId) placeAfter(p.id, c.afterId);
+  }
+  touch('learn'); return p;
+}
+function setItemStatus(id, st) {
+  const L = LESSONS.find(l => l.id === id);
+  if (L) { const p = S.learn.progress[id] = S.learn.progress[id] || {}; p.read = st === 'know'; if (p.read) p.readAt = p.readAt || dkey(); p.status = st; }
+  else { const pg = S.learn.pages.find(x => x.id === id); if (pg) pg.status = st; }
+  touch('learn');
+}
+function pageText(p) {
+  const s = sectionOf(p.section), L = [p.title.toUpperCase(), s.name + (p.goodnotes ? ' → ' + p.goodnotes : ''), ''];
+  if (p.oneLine) L.push(p.oneLine, '');
+  if (p.points && p.points.length) { L.push('Key points'); p.points.forEach(x => L.push('• ' + x)); L.push(''); }
+  if (p.formula) L.push('Formula: ' + p.formula, '');
+  if (p.example) L.push('Example: ' + p.example, '');
+  if (p.check && p.check.length) { L.push('Check yourself'); p.check.forEach((x, i) => L.push((i + 1) + '. ' + x)); }
+  return L.join('\n').trim();
+}
+function paperHTML(p, opts) {
+  opts = opts || {}; const s = sectionOf(p.section);
+  return '<article class="paper" style="--sec:' + esc(s.color) + '"><div class="paper-head"><span class="paper-sec">' + esc(s.name) + '</span>' + (p.goodnotes ? '<span class="paper-gn">Copy into: ' + esc(p.goodnotes) + '</span>' : '') + '</div>' +
+    '<h3 class="paper-title">' + esc(p.title) + '</h3>' + (p.oneLine ? '<p class="paper-one">' + esc(p.oneLine) + '</p>' : '') +
+    (p.points && p.points.length ? '<p class="paper-label">Key points</p><ul class="paper-pts">' + p.points.map(x => '<li>' + esc(x) + '</li>').join('') + '</ul>' : '') +
+    (p.formula ? '<p class="paper-label">Formula</p><div class="paper-formula">' + esc(p.formula) + '</div>' : '') +
+    (p.example ? '<p class="paper-label">Example</p><p class="paper-ex">' + esc(p.example) + '</p>' : '') +
+    (p.check && p.check.length ? '<p class="paper-label">Check yourself</p><ol class="paper-chk">' + p.check.map(x => '<li>' + esc(x) + '</li>').join('') + '</ol>' : '') +
+    (opts.actions ? '<div class="row paper-actions">' + '<button class="btn btn-sm ' + (p.copied ? 'btn-ghost' : 'btn-primary') + '" data-act="pageCopied" data-id="' + p.id + '">' + (p.copied ? '✓ Copied ' + esc(fmtDate(p.copied)) : 'I copied it') + '</button>' + (opts.open ? '<button class="btn btn-ghost btn-sm" data-act="openItem" data-id="' + (p.lessonId || p.id) + '">Open</button>' : '') + '</div>' : '') + '</article>';
+}
 function viewLearn() {
+  if (UI.learnId && LESSONS.find(l => l.id === UI.learnId)) return viewLesson();
+  const pg = UI.pageId && S.learn.pages.find(p => p.id === UI.pageId); if (pg) return viewPage(pg);
+  const tab = UI.learnTab === 'notebook' ? 'notebook' : 'path';
+  return '<section class="page-head"><div><p class="eyebrow">Learn · in the order you should know it</p><h1>' + (tab === 'path' ? 'Your learning path' : 'Notebook') + '</h1></div>' + segHTML('learnTab', [['path','Path'],['notebook','Notebook']]) + '</section>' + (tab === 'path' ? viewPath() : viewNotebook());
+}
+function viewPath() {
+  const items = learnItems(), here = items.find(x => x.status !== 'know'), n = st => items.filter(x => x.status === st).length;
+  const head = '<div class="card"><div class="row-between"><div><p class="eyebrow">You are here</p><h2>' + (here ? (items.indexOf(here) + 1) + '. ' + esc(here.title) : 'You know everything on your path') + '</h2><p class="small muted" style="margin-top:4px">' + n('know') + ' known · ' + n('learning') + ' learning · ' + n('next') + ' up next. Ask the mentor anything and it adds what you need to know here, in order.</p></div></div>' +
+    '<div class="row" style="margin-top:10px">' + (here ? '<button class="btn btn-primary btn-sm" data-act="openItem" data-id="' + here.id + '">Open</button>' : '') + '<button class="btn btn-sm" data-act="newPage">+ Add a topic</button>' + (AI.state === 'on' ? '<button class="btn btn-sm" data-act="sortPath" ' + (UI.busy.sort ? 'disabled' : '') + '>' + ICON.spark + (UI.busy.sort ? 'Sorting…' : 'Sort into the best order') + '</button>' : '') + (S.learn.prevOrder ? '<button class="btn btn-ghost btn-sm" data-act="undoSort">Undo sort</button>' : '') + '</div></div>';
+  const rows = items.map((x, i) => { const s = sectionOf(x.section); return '<li><button class="path-row' + (here && here.id === x.id ? ' here' : '') + '" data-act="openItem" data-id="' + x.id + '" style="--sec:' + esc(s.color) + '"><span class="path-n">' + (x.status === 'know' ? '✓' : i + 1) + '</span><span class="path-t"><b>' + esc(x.title) + '</b><span class="tiny faint">' + esc(s.name) + (x.kind === 'lesson' ? ' · lesson' : '') + (x.page && x.page.copied ? ' · copied' : '') + '</span></span><span class="pill ' + (x.status === 'know' ? 'good' : x.status === 'learning' ? 'accent' : '') + '">' + STATUS[x.status] + '</span></button></li>'; }).join('');
+  return head + '<ol class="path">' + rows + '</ol>';
+}
+function viewNotebook() {
+  const all = UI.nbAll === true, items = learnItems().filter(x => x.page);
+  const show = items.filter(x => all || !x.page.copied);
+  const setup = '<div class="card stack" style="gap:8px"><div><p class="eyebrow">Your GoodNotes</p><h2>Where things go</h2><p class="small muted">Describe your folders and notebooks. The mentor uses this to tell you which notebook each page goes in.</p></div><textarea id="gn_setup" data-ch="goodnotes" rows="3" placeholder="e.g. Folder Money: notebooks Deals, Credit. Folder CBU: CS 120, Finance. Folder Gym: Training.">' + esc(S.learn.goodnotes || '') + '</textarea></div>';
+  const bySec = S.learn.sections.map(s => ({s, list:show.filter(x => x.page.section === s.id || (x.kind === 'lesson' && x.section === s.id && x.page.section === s.id))})).filter(g => g.list.length);
+  const legend = '<div class="nb-legend">' + S.learn.sections.map(s => '<span class="nb-chip" style="--sec:' + esc(s.color) + '">' + esc(s.name) + ' <b>' + items.filter(x => x.page.section === s.id).length + '</b></span>').join('') + '<button class="btn btn-ghost btn-sm" data-act="newSection">+ Section</button></div>';
+  const toCopy = items.filter(x => !x.page.copied).length;
+  const filt = '<div class="row-between" style="margin:14px 0 8px"><p class="small"><b>' + toCopy + '</b> page' + (toCopy === 1 ? '' : 's') + ' to copy</p><div class="seg seg-sm" role="group"><button type="button" data-act="nbFilter" data-v="todo" aria-pressed="' + !all + '">To copy</button><button type="button" data-act="nbFilter" data-v="all" aria-pressed="' + all + '">All</button></div></div>';
+  const body = bySec.length ? bySec.map(g => '<section class="nb-sec"><h3 class="nb-sec-h" style="--sec:' + esc(g.s.color) + '">' + esc(g.s.name) + '</h3><div class="nb-grid">' + g.list.map(x => paperHTML(x.page, {actions:true, open:true})).join('') + '</div></section>').join('') :
+    '<div class="empty">' + (items.length ? 'Everything is copied. Switch to All to see every page.' : 'No pages yet. Ask your mentor how something works, or open a lesson and tap “Make notebook page”.') + '</div>';
+  return '<div class="grid-2" style="align-items:start"><div class="stack">' + setup + '<div class="card">' + legend + '</div></div><div style="min-width:0">' + filt + body + '</div></div>';
+}
+function viewPage(p) {
+  const items = learnItems(), i = items.findIndex(x => x.id === p.id), st = p.status || 'learning';
+  return '<section class="page-head"><div><button class="btn btn-ghost btn-sm" data-act="closePage" style="margin-bottom:6px">← Learn</button><p class="eyebrow">Step ' + (i + 1) + ' of ' + items.length + '</p><h1>' + esc(p.title) + '</h1></div><div class="seg" role="group">' + Object.keys(STATUS).map(k => '<button type="button" data-act="itemStatus" data-id="' + p.id + '" data-v="' + k + '" aria-pressed="' + (st === k) + '">' + STATUS[k] + '</button>').join('') + '</div></section>' +
+    '<div class="grid-2" style="align-items:start"><div>' + paperHTML(p, {actions:true}) + '</div><div class="stack"><div class="card stack" style="gap:8px"><h2>This page</h2><div class="row"><button class="btn btn-sm" data-act="editPage" data-id="' + p.id + '">Edit</button><button class="btn btn-sm" data-act="copyPage" data-id="' + p.id + '">Copy text</button>' + (AI.state === 'on' ? '<button class="btn btn-sm" data-act="mentorWith" data-mode="chat" data-q="' + esc('Teach me more about ' + p.title + ', then quiz me on it.') + '">' + ICON.spark + 'Ask the mentor</button>' : '') + '</div>' +
+    '<div class="row"><button class="btn btn-ghost btn-sm" data-act="moveItem" data-id="' + p.id + '" data-d="-1" ' + (i <= 0 ? 'disabled' : '') + '>↑ Earlier in path</button><button class="btn btn-ghost btn-sm" data-act="moveItem" data-id="' + p.id + '" data-d="1" ' + (i >= items.length - 1 ? 'disabled' : '') + '>↓ Later</button><button class="btn btn-ghost btn-sm btn-danger" data-act="rmPage" data-id="' + p.id + '">Delete</button></div>' +
+    '<p class="tiny faint">' + (p.source === 'handoff' ? 'From a handoff' : p.source === 'you' ? 'Added by you' : 'Saved by your mentor') + ' · ' + fmtDate(dkey(new Date(p.updatedAt || p.createdAt))) + '</p></div></div></div>';
+}
+function pageModal(p) {
+  p = p || {}; const secs = S.learn.sections;
+  openModal(sheet(p.id ? 'Edit page' : 'Add a topic', '<form class="stack" data-form="savePage" data-id="' + esc(p.id || '') + '"><label class="f">Title<input type="text" id="pg_title" maxlength="90" value="' + esc(p.title || '') + '"></label><div class="fields"><label class="f">Section<select id="pg_sec">' + secs.map(s => '<option value="' + esc(s.id) + '" ' + (s.id === p.section ? 'selected' : '') + '>' + esc(s.name) + '</option>').join('') + '</select></label><label class="f">GoodNotes notebook<input type="text" id="pg_gn" maxlength="120" placeholder="e.g. Money > Deals" value="' + esc(p.goodnotes || '') + '"></label></div>' +
+    '<label class="f">In one line<input type="text" id="pg_one" maxlength="240" value="' + esc(p.oneLine || '') + '"></label><label class="f">Key points (one per line)<textarea id="pg_pts" rows="5">' + esc((p.points || []).join('\n')) + '</textarea></label><label class="f">Formula<input type="text" id="pg_f" maxlength="200" value="' + esc(p.formula || '') + '"></label><label class="f">Example<textarea id="pg_ex" rows="3">' + esc(p.example || '') + '</textarea></label><label class="f">Check yourself (one question per line)<textarea id="pg_chk" rows="2">' + esc((p.check || []).join('\n')) + '</textarea></label><div class="row"><button class="btn btn-primary" type="submit">Save</button></div></form>'));
+}
+function registerLearn() {
+Object.assign(ACT, {
+  openItem:el => { const id = el.dataset.id; if (LESSONS.find(l => l.id === id)) { UI.learnId = id; UI.pageId = null; } else { UI.pageId = id; UI.learnId = null; } UI.quiz = null; if (UI.tab !== 'learn') { UI.keepLearn = true; location.hash = '#learn'; } render(); window.scrollTo(0, 0); },
+  closePage:() => { UI.pageId = null; render(); },
+  itemStatus:el => setItemStatus(el.dataset.id, el.dataset.v),
+  pageCopied:el => { const p = S.learn.pages.find(x => x.id === el.dataset.id); if (!p) return; p.copied = p.copied ? null : dkey(); touch('learn'); if (p.copied) toast('Nice. Writing it down is how it sticks.'); },
+  copyPage:el => { const p = S.learn.pages.find(x => x.id === el.dataset.id); if (p) copyText(pageText(p), 'Page text copied'); },
+  editPage:el => pageModal(S.learn.pages.find(x => x.id === el.dataset.id)),
+  newPage:() => pageModal(null),
+  rmPage:el => { if (!armed(el, 'Tap again to delete')) return; S.learn.pages = S.learn.pages.filter(x => x.id !== el.dataset.id); delete S.learn.order[el.dataset.id]; UI.pageId = null; touch('learn'); },
+  moveItem:el => { const items = learnItems(), i = items.findIndex(x => x.id === el.dataset.id), j = i + num(el.dataset.d); if (i < 0 || j < 0 || j >= items.length) return; const a = items[i], b = items[j]; S.learn.order[a.id] = b.order; S.learn.order[b.id] = a.order; if (a.order === b.order) S.learn.order[a.id] += num(el.dataset.d) * 0.5; touch('learn'); },
+  nbFilter:el => { UI.nbAll = el.dataset.v === 'all'; render(); },
+  newSection:() => openModal(sheet('New section', '<form class="stack" data-form="newSection"><label class="f">Name<input type="text" id="sc_n" maxlength="40" placeholder="e.g. Real estate law"></label><div class="row">' + SECTION_COLORS.map((c, i) => '<label class="swatch" style="--sec:' + c + '"><input type="radio" name="sc_c" value="' + c + '" ' + (i === S.learn.sections.length % SECTION_COLORS.length ? 'checked' : '') + '><span></span></label>').join('') + '</div><div class="row"><button class="btn btn-primary" type="submit">Add section</button></div></form>')),
+  undoSort:() => { if (!S.learn.prevOrder) return; S.learn.order = S.learn.prevOrder; delete S.learn.prevOrder; touch('learn'); toast('Back to your old order'); },
+  sortPath:async () => {
+    if (!AI.sample || UI.busy.sort) return; UI.busy.sort = true; render();
+    try {
+      const items = learnItems();
+      const r = await AI.sample.json('Order Ethan’s learning path so each topic comes after what it builds on: basics first, then what depends on them. Keep things he already knows near where they fit. Context: 20-year-old CS student doing Docstar lead generation for commission, researching rentals and car rentals, training for a lean physique.\nItems: ' + JSON.stringify(items.map(x => ({id:x.id, title:x.title, section:sectionOf(x.section).name}))) + '\nReply with only a JSON array of every id in the new order.', {modelTier:'quick', cache:false});
+      const ids = (Array.isArray(r) ? r : []).map(String).filter(id => items.some(x => x.id === id));
+      if (ids.length < Math.min(2, items.length)) throw {code:'invalid_json'};
+      S.learn.prevOrder = clone(S.learn.order); const ord = {}; ids.forEach((id, i) => { ord[id] = (i + 1) * 10; }); items.filter(x => !ids.includes(x.id)).forEach((x, i) => { ord[x.id] = (ids.length + i + 1) * 10; });
+      S.learn.order = ord; touch('learn'); toast('Path sorted. Tap Undo sort if you liked the old order.');
+    } catch (e) { toast(aiErr(e)); } finally { UI.busy.sort = false; render(); }
+  },
+  lessonPage:async el => {
+    const L = LESSONS.find(l => l.id === el.dataset.id); if (!L || !AI.sample || UI.busy.lp) return; UI.busy.lp = true; render();
+    try {
+      const r = await AI.sample.json('Make a notebook page Ethan will copy by hand into GoodNotes, from this lesson. Keep it short and clean: oneLine (one sentence), points (3-6, each under 15 words), formula, example (one worked example with simple numbers), check (2 questions). His GoodNotes setup: ' + (S.learn.goodnotes || 'not described') + '. Set goodnotes to the best folder > notebook from his setup, or "".\nLesson: ' + L.title + '\n' + L.body.join('\n') + '\nFormula: ' + L.formula + '\nReply with only JSON: {"oneLine": string, "points": [strings], "formula": string, "example": string, "check": [strings], "goodnotes": string}', {modelTier:'quick', cache:false});
+      savePage(Object.assign({}, r || {}, {title:L.title, section:LESSON_SECTION[L.id] || 'money', lessonId:L.id, source:'mentor'})); toast('Notebook page ready. It’s in Notebook, waiting to be copied.');
+    } catch (e) { toast(aiErr(e)); } finally { UI.busy.lp = false; render(); }
+  },
+  undoAuto:el => undoAuto(el.dataset.id),
+  openHandoff:() => handoffModal()
+});
+Object.assign(CH, {
+  goodnotes:el => { S.learn.goodnotes = el.value.slice(0, 1500); touch('learn'); },
+  mentorAuto:el => { S.profile.mentorAuto = el.checked; touch('profile'); toast(el.checked ? 'The mentor can now change your checklist and schedule. You can undo anything.' : 'Every change will wait for your approval.'); }
+});
+Object.assign(FORM, {
+  savePage:f => { const id = f.dataset.id || null; const t = $('#pg_title').value.trim(); if (!t) { toast('Give it a title.'); return; } const ex = id && S.learn.pages.find(x => x.id === id);
+    const p = savePage({id, title:t, section:$('#pg_sec').value, goodnotes:$('#pg_gn').value, oneLine:$('#pg_one').value, points:$('#pg_pts').value, formula:$('#pg_f').value, example:$('#pg_ex').value, check:$('#pg_chk').value, source:ex ? ex.source : 'you', lessonId:ex ? ex.lessonId : null});
+    if (ex && p) { ex.oneLine = strF($('#pg_one').value, 240); ex.points = arrF($('#pg_pts').value, 8, 160); ex.formula = strF($('#pg_f').value, 200); ex.example = strF($('#pg_ex').value, 500); ex.check = arrF($('#pg_chk').value, 3, 200); ex.goodnotes = strF($('#pg_gn').value, 120); touch('learn'); }
+    closeModal(); if (p && !p.lessonId) UI.pageId = p.id; render(); },
+  newSection:() => { const n = $('#sc_n').value.trim(); if (!n) return; const c = (document.querySelector('input[name=sc_c]:checked') || {}).value || SECTION_COLORS[0]; if (S.learn.sections.some(s => s.name.toLowerCase() === n.toLowerCase())) { toast('That section already exists.'); return; } S.learn.sections.push({id:uid(), name:n.slice(0, 40), color:c}); touch('learn'); closeModal(); }
+});
+ACT.newLessonPage = el => { const L = LESSONS.find(l => l.id === el.dataset.id); if (!L) return; const p = savePage({title:L.title, section:LESSON_SECTION[L.id] || 'money', lessonId:L.id, formula:L.formula, source:'you'}); pageModal(p); };
+}
+function lessonPageHTML(L) {
+  const pg = S.learn.pages.find(x => x.lessonId === L.id);
+  if (pg) return '<div><p class="eyebrow" style="margin:4px 0 8px">Notebook page · copy this into GoodNotes</p>' + paperHTML(pg, {actions:true}) + '<div class="row" style="margin-top:8px"><button class="btn btn-ghost btn-sm" data-act="editPage" data-id="' + pg.id + '">Edit page</button><button class="btn btn-ghost btn-sm" data-act="copyPage" data-id="' + pg.id + '">Copy text</button></div></div>';
+  return '<div class="card"><h2>Notebook page</h2><p class="small muted" style="margin-top:4px">A short, clean version of this lesson to copy by hand into GoodNotes.</p><div class="row" style="margin-top:10px">' + (AI.state === 'on' ? '<button class="btn btn-primary btn-sm" data-act="lessonPage" data-id="' + L.id + '" ' + (UI.busy.lp ? 'disabled' : '') + '>' + ICON.spark + (UI.busy.lp ? 'Writing…' : 'Make notebook page') + '</button>' : '') + '<button class="btn btn-sm" data-act="newLessonPage" data-id="' + L.id + '">Write it myself</button></div></div>';
+}
+function viewLesson() {
   const L = UI.learnId && LESSONS.find(l => l.id === UI.learnId);
   if (!L) {
     return '<section class="page-head"><div><p class="eyebrow">Learn · evaluate deals yourself</p><h1>Financial education</h1></div></section><div class="mod-list">' + LESSONS.map((l, i) => { const p = S.learn.progress[l.id] || {}; const best = (p.quizzes || []).reduce((m, q) => Math.max(m, q.score / q.total), 0); return '<button class="card mod" data-act="openLesson" data-id="' + l.id + '"><span class="mono tiny faint">Lesson ' + (i + 1) + '</span><h3>' + esc(l.title) + '</h3><div class="row" style="gap:6px">' + (p.read ? '<span class="pill good">Read</span>' : '<span class="pill">Not started</span>') + ((p.quizzes || []).length ? '<span class="pill info">Best quiz ' + Math.round(best * 100) + '%</span>' : '') + '</div></button>'; }).join('') + '</div>';
@@ -1290,10 +1614,10 @@ function viewLearn() {
       q.questions.map((x, qi) => '<div class="quiz-q"><b class="small">' + (qi + 1) + '. ' + esc(x.q) + '</b>' + x.o.map((o, oi) => { let cls = ''; if (q.submitted) { if (oi === x.a) cls = 'right'; else if (q.ans[qi] === oi) cls = 'wrong'; } return '<button type="button" class="quiz-opt ' + cls + '" data-act="quizPick" data-q="' + qi + '" data-o="' + oi + '" aria-pressed="' + (q.ans[qi] === oi) + '" ' + (q.submitted ? 'disabled' : '') + '>' + esc(o) + '</button>'; }).join('') + (q.submitted ? '<p class="small muted">' + esc(x.why) + '</p>' : '') + '</div>').join('') +
       '<div class="row" style="margin-top:12px">' + (q.submitted ? '<button class="btn" data-act="quizClose">Done</button>' : '<button class="btn btn-primary" data-act="quizSubmit" ' + (Object.keys(q.ans).length < q.questions.length ? 'disabled' : '') + '>Check answers</button>') + '</div></div>';
   }
-  return '<section class="page-head"><div><button class="btn btn-ghost btn-sm" data-act="closeLesson" style="margin-bottom:6px">← All lessons</button><h1>' + esc(L.title) + '</h1></div><div class="row">' + (p.read ? '<span class="pill good">Read</span>' : '<button class="btn" data-act="markRead" data-id="' + L.id + '">Mark as read</button>') + '</div></section>' +
+  return '<section class="page-head"><div><button class="btn btn-ghost btn-sm" data-act="closeLesson" style="margin-bottom:6px">← Learn</button><h1>' + esc(L.title) + '</h1></div><div class="seg" role="group">' + Object.keys(STATUS).map(k => '<button type="button" data-act="itemStatus" data-id="' + L.id + '" data-v="' + k + '" aria-pressed="' + (lessonStatus(L.id) === k) + '">' + STATUS[k] + '</button>').join('') + '</div></section>' +
     '<div class="grid-2" style="align-items:start"><div class="card lesson stack">' + L.body.map(b => '<p>' + esc(b) + '</p>').join('') + '<div><p class="eyebrow" style="margin-bottom:6px">Key formula</p><div class="formula">' + esc(L.formula) + '</div></div><div><p class="eyebrow" style="margin-bottom:6px">Practice</p><p class="small">' + esc(L.exercise) + '</p></div>' +
-    '<div class="row"><button class="btn btn-primary" data-act="quizStatic" data-id="' + L.id + '">Quick check (2 questions)</button>' + (AI.state === 'on' ? '<button class="btn" data-act="quizAI" data-id="' + L.id + '" ' + (UI.busy.quiz ? 'disabled' : '') + '>' + ICON.spark + (UI.busy.quiz ? 'Writing quiz…' : 'New AI quiz') + '</button><button class="btn btn-ghost" data-act="mentorWith" data-mode="explain" data-q="' + esc('Teach me more about ' + L.title.toLowerCase() + ' using my own deals and numbers, then check my understanding.') + '">Ask the mentor</button>' : '') + '</div></div>' +
-    '<div class="stack">' + quiz + ((p.quizzes || []).length ? '<div class="card"><div class="card-head"><h2>Your quiz history</h2></div><ul class="tasks">' + p.quizzes.slice(-6).reverse().map(x => '<li class="task"><span class="small" style="flex:1">' + fmtDate(x.date) + (x.ai ? ' · AI quiz' : '') + '</span><span class="mono small">' + x.score + '/' + x.total + '</span></li>').join('') + '</ul></div>' : '') + '</div></div>';
+    '<div class="row"><button class="btn btn-primary" data-act="quizStatic" data-id="' + L.id + '">Quick check (2 questions)</button>' + (AI.state === 'on' ? '<button class="btn" data-act="quizAI" data-id="' + L.id + '" ' + (UI.busy.quiz ? 'disabled' : '') + '>' + ICON.spark + (UI.busy.quiz ? 'Writing quiz…' : 'New AI quiz') + '</button><button class="btn btn-ghost" data-act="mentorWith" data-mode="chat" data-q="' + esc('Teach me more about ' + L.title.toLowerCase() + ' using my own deals and numbers, then check my understanding.') + '">Ask the mentor</button>' : '') + '</div></div>' +
+    '<div class="stack">' + quiz + ((p.quizzes || []).length ? '<div class="card"><div class="card-head"><h2>Your quiz history</h2></div><ul class="tasks">' + p.quizzes.slice(-6).reverse().map(x => '<li class="task"><span class="small" style="flex:1">' + fmtDate(x.date) + (x.ai ? ' · AI quiz' : '') + '</span><span class="mono small">' + x.score + '/' + x.total + '</span></li>').join('') + '</ul></div>' : '') + lessonPageHTML(L) + '</div></div>';
 }
 
 /* ---------- markdown-lite ---------- */
@@ -1321,7 +1645,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#modal
 function sheet(title, body) { return '<div class="sheet-head"><h2 id="modalTitle">' + title + '</h2><button class="icon-btn" data-act="closeModal" aria-label="Close">' + ICON.x + '</button></div>' + body; }
 
 function taskModal(t) {
-  openModal(sheet('Edit task', '<form class="stack" data-form="saveTask" data-id="' + t.id + '"><label class="f">Task<input type="text" id="te_title" value="' + esc(t.title) + '"></label><div class="fields"><label class="f">Area<select id="te_area">' + Object.keys(AREAS).map(a => '<option value="' + a + '" ' + (a === t.area ? 'selected' : '') + '>' + AREAS[a] + '</option>').join('') + '</select></label><label class="f">Repeats<select id="te_rep">' + Object.keys(REPEATS).map(r => '<option value="' + r + '" ' + (r === (t.repeat || '') ? 'selected' : '') + '>' + REPEATS[r] + '</option>').join('') + '</select></label><label class="f">Due date (one-time)<input type="date" id="te_date" value="' + esc(t.date || '') + '"></label></div><label class="f">Notes<textarea id="te_note">' + esc(t.note || '') + '</textarea></label><div class="row-between"><button class="btn btn-ghost btn-danger" type="button" data-act="rmTask" data-id="' + t.id + '">Delete task</button><button class="btn btn-primary" type="submit">Save</button></div></form>'));
+  openModal(sheet('Edit task', '<form class="stack" data-form="saveTask" data-id="' + t.id + '"><label class="f">Task<input type="text" id="te_title" value="' + esc(t.title) + '"></label><div class="fields"><label class="f">Area<select id="te_area">' + Object.keys(AREAS).map(a => '<option value="' + a + '" ' + (a === t.area ? 'selected' : '') + '>' + AREAS[a] + '</option>').join('') + '</select></label><label class="f">Repeats<select id="te_rep">' + Object.keys(REPEATS).map(r => '<option value="' + r + '" ' + (r === (t.repeat || '') ? 'selected' : '') + '>' + REPEATS[r] + '</option>').join('') + '</select></label><label class="f">Due date (one-time)<input type="date" id="te_date" value="' + esc(t.date || '') + '"></label></div><label class="f">Where (place or website)<input type="text" id="te_where" maxlength="140" placeholder="e.g. hunter.io, or the gym" value="' + esc(t.where || '') + '"></label><label class="f">Steps (one per line)<textarea id="te_steps" rows="5" placeholder="1 short action per line">' + esc((t.steps || []).join('\n')) + '</textarea></label>' + (AI.state === 'on' ? '<div class="row"><button class="btn btn-sm" type="button" data-act="aiSteps" data-id="' + t.id + '">' + ICON.spark + 'Break it into steps</button></div>' : '') + '<label class="f">Notes<textarea id="te_note">' + esc(t.note || '') + '</textarea></label><div class="row-between"><button class="btn btn-ghost btn-danger" type="button" data-act="rmTask" data-id="' + t.id + '">Delete task</button><button class="btn btn-primary" type="submit">Save</button></div></form>'));
 }
 function allTasksModal() {
   const open = S.tasks.items.filter(t => !t.repeat && !t.done).sort((a, b) => (a.date || '9') < (b.date || '9') ? -1 : 1);
@@ -1434,7 +1758,7 @@ const ACT = {
   talkDebrief:el => { const s = S.mentor.sessions.find(x => x.id === el.dataset.id); UI.mentorTab = 'chat'; UI.newMode = 'debrief'; UI.threadId = null; UI.pendingDraft = 'Debrief my talk with Dad about “' + s.topic + '”. Here’s what each of us said:\n- Me: \n- Dad: \nWhat did we decide?'; saveUI(); render(); setTimeout(() => { const c = $('#chatInput'); if (c) { c.value = UI.pendingDraft; c.focus(); } }, 30); },
   talkQuestions:el => talkQuestions(el.dataset.id),
   rmNote:el => { if (!armed(el, 'Tap again')) return; S.mentor.notes = S.mentor.notes.filter(n => n.id !== el.dataset.id); touch('mentor'); },
-  openLesson:el => { UI.learnId = el.dataset.id; UI.quiz = null; if (UI.tab !== 'learn') location.hash = '#learn'; render(); window.scrollTo(0, 0); },
+  openLesson:el => { UI.learnId = el.dataset.id; UI.pageId = null; UI.quiz = null; if (UI.tab !== 'learn') { UI.keepLearn = true; location.hash = '#learn'; } render(); window.scrollTo(0, 0); },
   closeLesson:() => { UI.learnId = null; UI.quiz = null; render(); },
   markRead:el => { const p = S.learn.progress[el.dataset.id] = S.learn.progress[el.dataset.id] || {}; p.read = true; p.readAt = dkey(); touch('learn'); },
   quizStatic:el => { const L = LESSONS.find(l => l.id === el.dataset.id); UI.quiz = {id:L.id, questions:L.quiz, ans:{}, submitted:false, ai:false}; render(); },
@@ -1470,7 +1794,7 @@ const FORM = {
   quickSleep:() => { S.body.sleep[dkey()] = {bed:$('#qs_bed').value, wake:$('#qs_wake').value, q:''}; touch('body'); const t = S.tasks.items.find(x => /sleep/i.test(x.title) && x.repeat); if (t) { t.doneOn[dkey()] = true; touch('tasks'); } },
   addTask:() => { const i = $('#newTask'), v = i.value.trim(); if (!v) return; S.tasks.items.push({id:uid(), title:v, area:$('#newTaskArea').value, date:dkey(), repeat:'', done:false, doneOn:{}, createdAt:dkey(), note:''}); i.value = ''; touch('tasks'); },
   addTaskFull:() => { const v = $('#at_t').value.trim(); if (!v) return; const r = $('#at_r').value; S.tasks.items.push({id:uid(), title:v, area:$('#at_a').value, date:r ? null : ($('#at_d').value || dkey()), repeat:r, done:false, doneOn:{}, createdAt:dkey(), note:''}); touch('tasks'); allTasksModal(); },
-  saveTask:f => { const t = S.tasks.items.find(x => x.id === f.dataset.id); if (!t) return; t.title = $('#te_title').value.trim() || t.title; t.area = $('#te_area').value; t.repeat = $('#te_rep').value; t.date = t.repeat ? null : ($('#te_date').value || null); t.note = $('#te_note').value; t.doneOn = t.doneOn || {}; touch('tasks'); closeModal(); toast('Task saved'); },
+  saveTask:f => { const t = S.tasks.items.find(x => x.id === f.dataset.id); if (!t) return; t.title = $('#te_title').value.trim() || t.title; t.area = $('#te_area').value; t.repeat = $('#te_rep').value; t.date = t.repeat ? null : ($('#te_date').value || null); t.note = $('#te_note').value; t.doneOn = t.doneOn || {}; const ns = $('#te_steps').value.split('\n').map(s => s.replace(/^\s*(\d+[.)]|[-*•])\s*/, '').trim()).filter(Boolean).slice(0, 8).map(s => s.slice(0, 160)); if (JSON.stringify(ns) !== JSON.stringify(t.steps || [])) { t.steps = ns; t.stepsDoneOn = {}; } t.where = $('#te_where').value.trim().slice(0, 140); touch('tasks'); closeModal(); toast('Task saved'); },
   addWeight:() => { const v = num($('#bw_v').value), d = $('#bw_d').value || dkey(); if (!v) { toast('Enter your weight in pounds.'); return; } S.body.weights = S.body.weights.filter(w => w.date !== d); S.body.weights.push({date:d, lb:v}); S.body.weights.sort((a, b) => a.date < b.date ? -1 : 1); if (S.body.weights.length > 730) S.body.weights.splice(0, S.body.weights.length - 730); $('#bw_v').value = ''; touch('body'); toast('Logged ' + v + ' lb'); },
   addMeal:() => { const n = $('#ml_n').value.trim(); if (!n) return; const k = UI.foodDate || dkey(); const f = S.body.food[k] = S.body.food[k] || {meals:[], water:0}; f.meals.push({id:uid(), name:n, kcal:num($('#ml_k').value), protein:num($('#ml_p').value)}); $('#ml_n').value = ''; $('#ml_k').value = ''; $('#ml_p').value = ''; pruneFood(); touch('body'); },
   addSleep:() => { const d = $('#sl_d').value || dkey(); S.body.sleep[d] = {bed:$('#sl_b').value, wake:$('#sl_w').value, q:num($('#sl_q').value) || ''}; const cut = addDays(dkey(), -200); Object.keys(S.body.sleep).forEach(k => { if (k < cut) delete S.body.sleep[k]; }); touch('body'); toast('Sleep logged: ' + sleepHours(S.body.sleep[d]).toFixed(1) + ' h'); },
@@ -1497,12 +1821,32 @@ document.addEventListener('input', e => { const el = e.target.closest('[data-in]
 document.addEventListener('submit', e => { const f = e.target.closest('form[data-form]'); if (!f) return; e.preventDefault(); if (FORM[f.dataset.form]) FORM[f.dataset.form](f, e); });
 document.addEventListener('keydown', e => { if (e.target && e.target.id === 'chatInput' && e.key === 'Enter' && !e.shiftKey && !e.isComposing) { e.preventDefault(); FORM.chat(); } });
 window.addEventListener('hashchange', route);
-document.addEventListener('toggle', e => { if (e.target && e.target.id === 'tlDetails') UI.tlOpen = e.target.open; }, true);
-function route() { const h = (location.hash || '').replace('#', ''); const ok = TABS.some(t => t[0] === h); UI.tab = ok ? h : 'today'; if (UI.tab !== 'learn') UI.quiz = null; render(); window.scrollTo(0, 0); }
+document.addEventListener('toggle', e => { if (e.target && e.target.id === 'tlDetails') UI.tlOpen = e.target.open; if (e.target && e.target.classList && e.target.classList.contains('task-steps')) { UI.stepsOpen = UI.stepsOpen || {}; UI.stepsOpen[e.target.dataset.id] = e.target.open; } }, true);
+const STEP_RULES = 'Steps: 2-6 super simple actions in order, each under 90 characters, starting with a verb, so a tired person can follow them without thinking (e.g. "Open hunter.io and sign in", "Click Campaigns, then New campaign"). Say exactly where to go: a website, an app, or a place. Never invent addresses, names, prices, or facts that are not in the data; if unsure, say "Ask Dad which..." as a step.';
+ACT.aiSteps = async el => {
+  const t = taskById(el.dataset.id); if (!t || !AI.sample || el.disabled) return; el.disabled = true; const label = el.innerHTML; el.textContent = 'Writing steps…';
+  try {
+    const r = await AI.sample.json('Break this task for Ethan into steps.\nTask: "' + ($('#te_title') ? $('#te_title').value : t.title) + '" (area: ' + t.area + ')' + (t.note ? '\nNotes: ' + t.note : '') + '\n' + STEP_RULES + '\nAlso give "where": the one main website, app, or place for this task (short, e.g. "hunter.io" or "Gym"), or "" if none.\nReply with only JSON: {"where": string, "steps": [strings]}\n\nApp data:\n' + appContext(), {modelTier:'quick', cache:false});
+    const steps = (r && Array.isArray(r.steps) ? r.steps : []).map(s => String(s).trim()).filter(Boolean).slice(0, 8);
+    if (!steps.length) throw {code:'invalid_json'};
+    if ($('#te_steps')) $('#te_steps').value = steps.join('\n');
+    if ($('#te_where') && r.where && !$('#te_where').value.trim()) $('#te_where').value = String(r.where).slice(0, 140);
+    toast('Steps drafted. Edit them if you want, then Save.');
+  } catch (e) { toast(aiErr(e)); } finally { el.disabled = false; el.innerHTML = label; }
+};
+ACT.toggleStep = el => {
+  const t = taskById(el.dataset.id); if (!t) return; const k = el.dataset.k || dkey(), i = num(el.dataset.i);
+  t.stepsDoneOn = t.stepsDoneOn || {}; const arr = t.stepsDoneOn[k] = (t.stepsDoneOn[k] || []).filter(x => x !== i).concat((t.stepsDoneOn[k] || []).includes(i) ? [] : [i]);
+  Object.keys(t.stepsDoneOn).forEach(d => { if (d < addDays(dkey(), -14)) delete t.stepsDoneOn[d]; });
+  UI.stepsOpen = UI.stepsOpen || {}; UI.stepsOpen[t.id] = true;
+  if (arr.length >= (t.steps || []).length && !isDone(t, k)) { if (t.repeat) { t.doneOn = t.doneOn || {}; t.doneOn[k] = true; } else { t.done = true; t.doneAt = k; } UI.stepsOpen[t.id] = false; toast('All steps done. Checked off “' + t.title + '”.'); }
+  touch('tasks');
+};
+function route() { const h = (location.hash || '').replace('#', ''); const ok = TABS.some(t => t[0] === h); const prev = UI.tab; UI.tab = ok ? h : 'today'; if (UI.tab === 'learn' && prev !== 'learn' && !UI.keepLearn) { UI.pageId = null; UI.learnId = null; } UI.keepLearn = false; if (UI.tab !== 'learn') UI.quiz = null; render(); window.scrollTo(0, 0); }
 
 /* ================= AI flows ================= */
 function newThread(mode, firstMsg) {
-  const th = {id:uid(), title:firstMsg.replace(/\s+/g, ' ').slice(0, 60) + (firstMsg.length > 60 ? '…' : ''), mode:mode || 'explain', createdAt:Date.now(), updatedAt:Date.now(), messages:[]};
+  const th = {id:uid(), title:firstMsg.replace(/\s+/g, ' ').slice(0, 60) + (firstMsg.length > 60 ? '…' : ''), mode:mode || 'chat', createdAt:Date.now(), updatedAt:Date.now(), messages:[]};
   S.mentor.threads.push(th); if (S.mentor.threads.length > 60) S.mentor.threads.shift();
   UI.threadId = th.id; saveUI(); return th;
 }
@@ -1514,25 +1858,27 @@ function startThreadWith(mode, q) {
 }
 async function sendChat(text, modeOverride) {
   if (!AI.sample) { toast('AI isn’t available in this view.'); return; }
-  let th = currentThread(); if (!th) th = newThread(modeOverride || UI.newMode, text);
+  let th = currentThread(); if (!th) { th = newThread(modeOverride || (['prep','debrief'].includes(UI.newMode) ? UI.newMode : 'chat'), text); UI.newMode = 'chat'; }
   th.messages.push({role:'user', content:text, at:Date.now()}); th.updatedAt = Date.now();
   if (th.messages.length > 80) th.messages.splice(0, th.messages.length - 80);
   touch('mentor');
   const ctl = new AbortController();
   UI.streaming = {threadId:th.id, text:'', ctl}; UI.scrollChat = true; render();
-  const turns = th.messages.slice(-24).map(m => ({role:m.role, content:String(m.content || '(empty)')}));
+  const turns = th.messages.slice(-24).map(m => ({role:m.role, content:String(m.content || '(empty)') + (m.actions && m.actions.length ? '\n\n[In the app: ' + m.actions.map(a => (a.kind === 'learn' ? 'saved to Learn: ' : a.kind === 'applied' ? 'applied: ' : 'waiting for approval: ') + a.text).join('; ') + ']' : '')}));
   const input = [{role:'user', content:rulesFor(th.mode)}].concat(turns);
   const opts = {signal:ctl.signal, cache:false, onText:({text}) => { if (UI.streaming) UI.streaming.text = text; const el = $('#streamBubble'); if (el) el.innerHTML = md(text); }};
-  if (AI.tools) opts.tools = [proposeTool(th.id)];
+  if (AI.tools) opts.tools = [proposeTool(th.id), learnTool(th.id)];
+  if (UI.actions) delete UI.actions[th.id];
   try {
     const r = await AI.sample(input, opts);
-    th.messages.push({role:'assistant', content:r.text + (r.truncated ? '\n\n(Cut short. Ask me to continue.)' : ''), at:Date.now()});
+    th.messages.push({role:'assistant', content:r.text + (r.truncated ? '\n\n(Cut short. Ask me to continue.)' : ''), at:Date.now(), actions:(UI.actions && UI.actions[th.id]) || undefined});
   } catch (e) {
-    if (e && e.text) th.messages.push({role:'assistant', content:e.text + '\n\n(Interrupted)', at:Date.now()});
+    if (e && e.text) th.messages.push({role:'assistant', content:e.text + '\n\n(Interrupted)', at:Date.now(), actions:(UI.actions && UI.actions[th.id]) || undefined});
+    else if (UI.actions && UI.actions[th.id]) th.messages.push({role:'assistant', content:'(Reply interrupted, but these changes went through.)', at:Date.now(), actions:UI.actions[th.id]});
     if (!e || e.code !== 'cancelled') toast(aiErr(e));
     if (e && e.code === 'tools_unavailable') AI.tools = false;
     aiOffHard(e);
-  } finally { th.updatedAt = Date.now(); UI.streaming = null; UI.scrollChat = true; touch('mentor'); }
+  } finally { if (UI.actions) delete UI.actions[th.id]; th.updatedAt = Date.now(); UI.streaming = null; UI.scrollChat = true; touch('mentor'); }
 }
 async function chatToChanges(kind) {
   const th = currentThread(); if (!th || !AI.sample || UI.busy.chatJson) return;
@@ -1769,21 +2115,22 @@ function replanHTML() {
 async function replan(text) {
   if (!AI.sample) return; UI.busy.replan = true; UI.replanReply = ''; render();
   const now = new Date(), k = dkey(now), nowM = now.getHours() * 60 + now.getMinutes(), start = fromMin(Math.min(1439, Math.ceil(nowM / 15) * 15));
-  const days = [0, 1, 2].map(i => { const d = addDays(k, i), pd = planDayFor(d); return {date:d, weekday:DOW[parseKey(d).getDay()], workout:pd ? pd.name : null, blocks:blocksFor(d).map(b => b.start + '-' + b.end + ' ' + b.label + ' [' + b.area + ']')}; });
+  const days = [0, 1, 2].map(i => { const d = addDays(k, i), pd = planDayFor(d); return {date:d, weekday:DOW[parseKey(d).getDay()], workout:pd ? pd.name : null, blocks:blocksFor(d).map(b => b.start + '-' + b.end + ' ' + b.label + ' [' + b.area + ']'), checklist:S.tasks.items.filter(t => isDueOn(t, d) && !(i > 0 && !t.repeat && (!t.date || t.date < d))).map(t => ({taskId:t.id, title:t.title, area:t.area, repeats:t.repeat || null, done:isDone(t, d), hasSteps:!!(t.steps && t.steps.length)}))}; });
   const done = S.train.sessions.filter(s => s.date >= weekStart(k)).map(s => s.date + ' ' + s.dayName);
   const prompt = 'Ethan just told you about a change in his plans: """' + text.slice(0, 1500) + '"""\nRight now it is ' + DOW[now.getDay()] + ' ' + k + ' at ' + fromMin(nowM) + '.\n' +
     'Replan only the days the change affects (today, tomorrow, or the day after). For each affected day, return the COMPLETE list of blocks for that day.\n' +
-    'Rules: For today, every block must start at or after ' + start + '. If he wants to train on a day, include a block labeled "Gym: <workout name>" with area gym at a realistic time, and set workout to that training day name; set workout to null if he skips. Keep dinner near 18:30 unless the change moves it. Keep classes and Docstar work that still apply. Do not add bedtime or sleep blocks; evenings after dinner are his free time unless he says otherwise. If the change involves a conversation with his dad, add a block for it, a 30-45 minute prep block before it, and an add_talk change. Add add_task changes only for concrete new to-dos. Use 24-hour HH:MM.\n' +
+    'Rules: For today, every block must start at or after ' + start + '. If he wants to train on a day, include a block labeled "Gym: <workout name>" with area gym at a realistic time, and set workout to that training day name; set workout to null if he skips. Keep dinner near 18:30 unless the change moves it. Keep classes and Docstar work that still apply. Do not add bedtime or sleep blocks; evenings after dinner are his free time unless he says otherwise. If the change involves a conversation with his dad, add a block for it, a 30-45 minute prep block before it, and an add_talk change. Use 24-hour HH:MM.\n' +
+    'Checklist: make each affected day’s checklist match the new schedule. For a repeating task that no longer fits that day, use skip_task {taskId, date}. For a one-time task that no longer fits, use update_task {taskId, date} to move it to a better day. Use remove_task only if he says the task is cancelled. Add add_task only for concrete new to-dos the change creates (e.g. prep for the talk). For every task on today’s checklist that is not done and has hasSteps false, plus every new task, include "where" and "steps" (via update_task {taskId, where, steps} or in the add_task). ' + STEP_RULES + ' Never mark tasks done. Use only taskIds from the data.\n' +
     'Training days: ' + S.train.plan.days.map(d => d.dow + ' ' + d.name).join('; ') + '. Done this week: ' + (done.join('; ') || 'none') + '.\n' +
     'Current schedules: ' + JSON.stringify(days) + '\n' +
-    'Reply with only JSON: {"reply": "1-2 plain sentences to Ethan", "summary": "one line", "days": [{"date": "YYYY-MM-DD", "workout": "training day name or null", "blocks": [{"start": "HH:MM", "end": "HH:MM", "label": string, "area": "gym|docstar|research|body|school|learn|life"}]}], "changes": [ {"type": "add_task", "title": string, "area": string, "date": "YYYY-MM-DD"} or {"type": "add_talk", "date": "YYYY-MM-DD", "topic": string} ]}';
+    'Reply with only JSON: {"reply": "1-2 plain sentences to Ethan", "summary": "one line", "days": [{"date": "YYYY-MM-DD", "workout": "training day name or null", "blocks": [{"start": "HH:MM", "end": "HH:MM", "label": string, "area": "gym|docstar|research|body|school|learn|life"}]}], "changes": [ {"type": "add_task", "title": string, "area": string, "date": "YYYY-MM-DD", "where": string, "steps": [strings]} or {"type": "update_task", "taskId": string, "date"?: "YYYY-MM-DD", "where"?: string, "steps"?: [strings]} or {"type": "skip_task", "taskId": string, "date": "YYYY-MM-DD"} or {"type": "remove_task", "taskId": string} or {"type": "add_talk", "date": "YYYY-MM-DD", "topic": string} ]}';
   try {
     const res = await AI.sample.json(prompt, {modelTier:'quick', cache:false});
     const changes = [];
     (res && Array.isArray(res.days) ? res.days : []).forEach(d => { if (!d || !/^\d{4}-\d{2}-\d{2}$/.test(d.date || '') || !Array.isArray(d.blocks)) return; changes.push({type:'set_day_schedule', date:d.date, blocks:d.blocks}); const cur = planDayFor(d.date); if ((d.workout || null) !== (cur ? cur.name : null)) changes.push({type:'set_workout', date:d.date, dayName:d.workout || ''}); });
     (res && Array.isArray(res.changes) ? res.changes : []).forEach(c => changes.push(c));
-    const p = queueProposal({summary:(res && res.summary) || 'Replanned your schedule', changes}, 'Replan', null);
-    UI.replanReply = String((res && res.reply) || '') + (p ? ' Review it above, then tap Approve.' : ' No schedule changes were needed.');
+    const r = applyOrQueue(changes, (res && res.summary) || 'Replanned your day', 'Replan', null);
+    UI.replanReply = String((res && res.reply) || '') + (r.applied ? ' Done: your schedule and checklist are updated (Undo above if you want).' : '') + (r.queued ? ' A few changes are waiting for your approval above.' : '') + (!r.applied && !r.queued ? ' No changes were needed.' : '');
     const t = $('#changeText'); if (t) t.value = '';
   } catch (e) { toast(aiErr(e)); aiOffHard(e); }
   finally { UI.busy.replan = false; render(); if (UI.replanReply) window.scrollTo({top:0, behavior:'smooth'}); }
@@ -1901,6 +2248,58 @@ Object.assign(ACT, {
   simMentor:() => { const s = UI.sim; if (!s) return; startThreadWith('challenge', 'I ran a 400-run simulation on my ' + CALC[s.type].label.toLowerCase() + ' analysis (' + (isExample(s.type) ? 'example inputs' : 'my own unverified inputs') + ') over ' + s.M + ' months, starting from minus my upfront cash. Results: ' + Math.round(s.probLoss * 100) + '% chance I am still down at the end; typical result ' + money(s.f50) + '; bad case (1 in 10) ' + money(s.f10) + '; good case ' + money(s.f90) + '; typical payback ' + (s.be ? 'month ' + s.be : 'never') + '. Inputs: ' + JSON.stringify(dealVals(s.type)) + '. What does this actually tell me, which inputs drive the risk most, and would you take this deal?'); }
 });
 
+/* ================= handoff to/from other AIs ================= */
+const HANDOFF_SHAPE = '{"summary": "2-3 sentences: what we covered and decided", "tasks": [{"title": "", "area": "docstar|research|body|school|learn|life", "date": "YYYY-MM-DD", "where": "", "steps": ["", ""]}], "schedule": [{"date": "YYYY-MM-DD", "blocks": [{"start": "HH:MM", "end": "HH:MM", "label": "", "area": "gym|docstar|research|body|school|learn|life"}]}], "learn": [{"title": "", "section": "", "oneLine": "", "points": [""], "formula": "", "example": "", "check": [""], "goodnotes": ""}], "notes": [""]}';
+function handoffPack() {
+  const th = currentThread() || S.mentor.threads.slice().sort((a, b) => b.updatedAt - a.updatedAt)[0], now = new Date();
+  const convo = th ? th.messages.slice(-12).map(m => (m.role === 'user' ? 'Me: ' : 'Mentor: ') + String(m.content).slice(0, 1500)).join('\n\n') : '(none yet)';
+  return ['# Handoff from my Command Center app',
+    'Date: ' + fmtDate(dkey()) + ', ' + fmtTime(fromMin(now.getHours() * 60 + now.getMinutes())) + '. My usual mentor AI is out of usage, so you are taking over. Use everything below, act the same way, and keep the same goals. Talk to me normally.',
+    '', '## How to act', BASE_RULES.replace(/inside Ethan Connors’ personal command center app/, 'for Ethan Connors (his app data is below)'),
+    '- Give every task a "where" (website, app, or place) and 2-6 super simple steps.',
+    '- When I learn something worth keeping, write it as a short notebook page I can copy by hand into GoodNotes: one-line summary, 3-6 key points, formula, one example, 1-2 check-yourself questions.',
+    '', '## My app data (JSON)', appContext(),
+    '', '## Our most recent conversation', convo,
+    '', '## When we are done',
+    'When I say "handoff", reply with ONE code block that starts with ```cc-handoff and contains only JSON in this shape, so I can paste it back into my app:',
+    HANDOFF_SHAPE,
+    'Leave out keys you have nothing for. For schedule, only include days that changed, with the full list of blocks for each.'].join('\n');
+}
+function parseHandoff(t) {
+  t = String(t || ''); const tryP = x => { try { return JSON.parse(x); } catch (e) { return null; } };
+  const m = t.match(/```\s*cc-handoff\s*([\s\S]*?)```/i) || t.match(/```(?:json)?\s*(\{[\s\S]*?\})\s*```/i);
+  let o = m ? tryP(m[1].trim()) : null;
+  if (!o) { const a = t.indexOf('{'), b = t.lastIndexOf('}'); if (a >= 0 && b > a) o = tryP(t.slice(a, b + 1)); }
+  return o && typeof o === 'object' && ['summary','tasks','schedule','learn','notes'].some(k => k in o) ? o : null;
+}
+function handoffChanges(o) {
+  const ch = [], L = v => (Array.isArray(v) ? v : []).filter(x => x && typeof x === 'object');
+  L(o.tasks).forEach(x => ch.push({type:'add_task', title:x.title, area:x.area, date:/^\d{4}-\d{2}-\d{2}$/.test(x.date || '') ? x.date : dkey(), where:x.where, steps:x.steps}));
+  L(o.schedule).forEach(d => ch.push({type:'set_day_schedule', date:d.date, blocks:d.blocks}));
+  L(o.learn).forEach(x => ch.push(Object.assign({}, x, {type:'save_learn', source:'handoff'})));
+  return ch;
+}
+function handoffModal() {
+  openModal(sheet('Handoff', '<div class="stack"><div class="stack" style="gap:8px"><p class="eyebrow">1 · Take it to another AI</p><p class="small muted">Copy this and paste it into ChatGPT (or any AI) as your first message. It has your plan, checklist, learning path, and the latest chat, plus instructions for handing back.</p><textarea id="ho_out" rows="6" readonly>' + esc(handoffPack()) + '</textarea><div class="row"><button class="btn btn-primary btn-sm" data-act="copyHandoff">Copy handoff</button></div></div>' +
+    '<div class="divider"></div><form class="stack" data-form="handoffImport" style="gap:8px"><p class="eyebrow">2 · Bring it back</p><p class="small muted">When you’re done there, type “handoff” to it, then paste its reply here. Tasks, schedule changes, and notebook pages wait for your approval. You can also paste the whole conversation.</p><textarea id="ho_in" rows="6" placeholder="Paste the cc-handoff block (or the whole chat) here"></textarea><div class="row"><button class="btn btn-sm" type="submit" ' + (UI.busy.handoff ? 'disabled' : '') + '>' + (UI.busy.handoff ? 'Reading…' : 'Import') + '</button></div></form></div>'));
+}
+ACT.copyHandoff = () => copyText($('#ho_out').value, 'Handoff copied. Paste it into the other AI.');
+FORM.handoffImport = async () => {
+  const t = ($('#ho_in') || {}).value || ''; if (!t.trim() || UI.busy.handoff) return;
+  let o = parseHandoff(t);
+  if (!o && AI.sample) {
+    UI.busy.handoff = true; const b = $('form[data-form=handoffImport] button'); if (b) { b.disabled = true; b.textContent = 'Reading…'; }
+    try { o = await AI.sample.json('This is a conversation Ethan had with another AI while his app’s mentor was unavailable. Today is ' + dkey() + '. Pull out what matters for his app: a short summary, concrete tasks (with where and simple steps), any schedule changes for specific days, things he learned (as short notebook pages), and notes. Reply with only JSON in this shape: ' + HANDOFF_SHAPE + '\n\nConversation:\n' + t.slice(0, 40000), {modelTier:'quick', cache:false}); }
+    catch (e) { toast(aiErr(e)); } finally { UI.busy.handoff = false; }
+  }
+  if (!o) { toast('No handoff block found. Ask the other AI: “give me the cc-handoff block”, then paste that.'); return; }
+  const summary = String(o.summary || 'Handoff from another AI').slice(0, 700), notes = (Array.isArray(o.notes) ? o.notes : []).map(String).filter(Boolean).slice(0, 12);
+  S.mentor.notes.push({id:uid(), date:dkey(), kind:'note', text:'Handoff from another AI: ' + summary + (notes.length ? '\n- ' + notes.join('\n- ') : '')}); touch('mentor');
+  const p = queueProposal({summary:'From your other AI: ' + summary.slice(0, 220), changes:handoffChanges(o)}, 'Handoff', null);
+  closeModal(); toast(p ? 'Imported. Review the changes at the top, then approve.' : 'Imported the summary into your notes. No plan changes in it.');
+  if (location.hash !== '#mentor') location.hash = '#mentor'; else render();
+};
+
 /* ================= crew (standalone app only; hidden inside Claude) ================= */
 const CREW = {api:null, me:null, profile:null, crews:[], crew:null, members:[], statuses:[], hist:[], nudges:[], unsub:[], last:'', timer:null, ready:false, watchDate:null};
 const KIND = {gym:'gym', docstar:'work', research:'work', school:'school', learn:'school', body:'other', life:'free'};
@@ -2002,6 +2401,7 @@ Object.assign(FORM, {
 });
 
 /* ================= boot ================= */
+registerLearn();
 route();
 initStore().then(() => { ensureShape(); render(); initCrew(); });
 })();

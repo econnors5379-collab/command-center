@@ -69,6 +69,7 @@
     try { cfg = await loadConfig(); } catch (e) { return fatal('Can’t reach the server. Check your connection, then reopen the app.'); }
     if (!cfg.supabaseUrl || !cfg.supabaseAnonKey) return fatal('Setup isn’t finished: SUPABASE_URL and SUPABASE_ANON_KEY are missing in Vercel.');
     if (cfg.appName) document.title = cfg.appName;
+    brand();
     if (!window.supabase || !window.supabase.createClient) return fatal('Couldn’t load the sign-in library. Check your connection, then reopen the app.');
     client = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey, {auth: {persistSession: true, autoRefreshToken: true, storageKey: 'cc-auth'}});
     const {data} = await client.auth.getSession();
@@ -81,6 +82,15 @@
     const mount = () => { const d = document.createElement('div'); d.id = 'cc-auth'; d.innerHTML = '<form><p class="err"></p></form>'; d.querySelector('.err').textContent = msg; if (!document.getElementById('cc-auth-css')) { const st = document.createElement('style'); st.id = 'cc-auth-css'; st.textContent = CSS; document.head.appendChild(st); } document.body.appendChild(d); };
     if (document.body) mount(); else document.addEventListener('DOMContentLoaded', mount, {once: true});
     return false;
+  }
+  // Header: your app name + logo instead of the default text mark.
+  function brand() {
+    const apply = () => {
+      const n = document.querySelector('.brand-name'), m = document.querySelector('.brand-mark');
+      if (n && cfg && cfg.appName) n.textContent = cfg.appName;
+      if (m && !m.querySelector('img')) { m.textContent = ''; m.style.cssText += ';padding:0;overflow:hidden;background:none'; const i = document.createElement('img'); i.src = '/icons/icon-192.png'; i.alt = ''; i.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block'; m.appendChild(i); }
+    };
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', apply, {once: true}); else apply();
   }
   const uid = () => session && session.user && session.user.id;
   async function token() { try { const {data} = await client.auth.getSession(); if (data && data.session) session = data.session; } catch (e) {} return session && session.access_token; }
